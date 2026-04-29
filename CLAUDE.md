@@ -46,13 +46,23 @@ os.chmod(path, 0o600)
 # Verify with: cd to repo, git fetch origin
 ```
 
-**3. Verify the sandbox understands the project.** Quick sanity check:
+**3. Sync with remote and verify the project state.**
+
+**Critical:** The workspace folder's `.git` directory is always behind the remote. Git operations happen from `/tmp`, so the workspace's local git state is never updated after a push. **Do not run `git status` or `git log` directly in the workspace folder** — the output is misleading and will make it look like already-committed posts are untracked.
+
+Instead, copy to `/tmp` first and pull from remote before checking anything:
 
 ```bash
-cd "/sessions/<session-id>/mnt/Blog project"
-git status
-git log --oneline -5
+cp -r "/sessions/<session-id>/mnt/Blog project" /tmp/blog-build
+cd /tmp/blog-build
+git pull origin main          # sync with remote — this is the source of truth
+git log --oneline -5          # now reflects what's actually live
+python3 scripts/queue-status.py  # use this to see what's published vs. remaining
 ```
+
+After the pull, anything showing as untracked in the workspace that is **absent** from `/tmp/blog-build` after the pull has not been committed yet. Anything already in `/tmp/blog-build` after the pull is already live — don't re-commit it.
+
+**Never use the workspace's `git status` to decide what needs committing.** Use `queue-status.py` output and the `/tmp/blog-build` git log instead.
 
 If the bootstrap fails (PAT expired, file moved, etc.), tell Lonnie what's wrong and ask for a fresh PAT — don't silently degrade.
 
@@ -63,6 +73,7 @@ The bash sandbox cannot write to the workspace's `.git/` directory or `node_modu
 ```bash
 cp -r "/sessions/<session-id>/mnt/Blog project" /tmp/blog-build
 cd /tmp/blog-build
+git pull origin main   # always pull before adding new work
 
 # Build to verify
 npm run build
