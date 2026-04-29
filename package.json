@@ -8,9 +8,12 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
+  },
+  "devDependencies": {
+    "pagefind": "^1.3.0"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",

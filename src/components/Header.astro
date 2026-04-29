@@ -14,19 +14,43 @@ import HeaderLink from './HeaderLink.astro';
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
-		<div class="social-links">
-			<a href={CHANNEL_URL} target="_blank" rel="noopener" class="yt-link" aria-label="Garage Geek Guy on YouTube">
-				<svg viewBox="0 0 24 24" aria-hidden="true" width="28" height="28">
-					<path
-						fill="currentColor"
-						d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-					/>
+		<div class="right-cluster">
+			<button id="search-trigger" class="search-btn" aria-label="Search posts">
+				<svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="11" cy="11" r="8"/>
+					<line x1="21" y1="21" x2="16.65" y2="16.65"/>
 				</svg>
-				<span>YouTube</span>
-			</a>
+				<span class="search-label">Search</span>
+			</button>
+			<div class="social-links">
+				<a href={CHANNEL_URL} target="_blank" rel="noopener" class="yt-link" aria-label="Garage Geek Guy on YouTube">
+					<svg viewBox="0 0 24 24" aria-hidden="true" width="28" height="28">
+						<path
+							fill="currentColor"
+							d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+						/>
+					</svg>
+					<span>YouTube</span>
+				</a>
+			</div>
 		</div>
 	</nav>
 </header>
+
+<!-- Search overlay — lives outside <header> so it can cover the full viewport -->
+<div id="search-overlay" class="search-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search">
+	<div class="search-backdrop"></div>
+	<div class="search-panel">
+		<button id="search-close" class="search-close" aria-label="Close search">
+			<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+				<line x1="18" y1="6" x2="6" y2="18"/>
+				<line x1="6" y1="6" x2="18" y2="18"/>
+			</svg>
+		</button>
+		<div id="search"></div>
+	</div>
+</div>
+
 <style>
 	header {
 		margin: 0;
@@ -94,6 +118,12 @@ import HeaderLink from './HeaderLink.astro';
 		color: var(--text);
 		border-bottom-color: var(--accent);
 	}
+	/* Right cluster: search button + YouTube link */
+	.right-cluster {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
 	.social-links {
 		display: flex;
 	}
@@ -117,6 +147,97 @@ import HeaderLink from './HeaderLink.astro';
 	.yt-link svg {
 		flex-shrink: 0;
 	}
+	/* Search trigger button */
+	.search-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4em;
+		padding: 0.4em 0.85em;
+		background: transparent;
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		color: var(--text-muted);
+		font-size: 0.9em;
+		font-weight: 600;
+		cursor: pointer;
+		font-family: inherit;
+		transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+	}
+	.search-btn:hover {
+		color: var(--text);
+		border-color: var(--text-muted);
+	}
+	/* Search overlay */
+	.search-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 100;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		padding-top: 10vh;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.15s ease;
+	}
+	.search-overlay.is-open {
+		opacity: 1;
+		pointer-events: all;
+	}
+	.search-backdrop {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.7);
+		backdrop-filter: blur(4px);
+	}
+	.search-panel {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 640px;
+		margin: 0 1em;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1.25em;
+		box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+	}
+	.search-close {
+		position: absolute;
+		top: 0.9em;
+		right: 0.9em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2em;
+		height: 2em;
+		background: transparent;
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		color: var(--text-muted);
+		cursor: pointer;
+		transition: color 0.15s ease, border-color 0.15s ease;
+		font-family: inherit;
+	}
+	.search-close:hover {
+		color: var(--text);
+		border-color: var(--text-muted);
+	}
+	/* Pagefind UI theme overrides — maps GGG dark palette onto Pagefind's CSS vars */
+	#search {
+		--pagefind-ui-scale: 0.9;
+		--pagefind-ui-primary: var(--accent);
+		--pagefind-ui-text: var(--text);
+		--pagefind-ui-background: var(--surface);
+		--pagefind-ui-border: var(--border);
+		--pagefind-ui-border-radius: 8px;
+		--pagefind-ui-font: inherit;
+		--pagefind-ui-tag: var(--surface-2);
+	}
+	/* Ensure Pagefind result links use accent color */
+	#search .pagefind-ui__result-link {
+		color: var(--accent) !important;
+	}
 	@media (max-width: 720px) {
 		.brand-name {
 			display: none;
@@ -127,5 +248,84 @@ import HeaderLink from './HeaderLink.astro';
 		.yt-link {
 			padding: 0.4em !important;
 		}
+		.search-label {
+			display: none;
+		}
+		.search-btn {
+			padding: 0.4em;
+		}
 	}
 </style>
+
+<script is:inline>
+	(function () {
+		const trigger = document.getElementById('search-trigger');
+		const overlay = document.getElementById('search-overlay');
+		const backdrop = overlay.querySelector('.search-backdrop');
+		const closeBtn = document.getElementById('search-close');
+		let initialized = false;
+
+		function openSearch() {
+			overlay.classList.add('is-open');
+			overlay.setAttribute('aria-hidden', 'false');
+			document.body.style.overflow = 'hidden';
+
+			if (!initialized) {
+				initialized = true;
+				// Load Pagefind CSS
+				const link = document.createElement('link');
+				link.rel = 'stylesheet';
+				link.href = '/_pagefind/pagefind-ui.css';
+				document.head.appendChild(link);
+
+				// Load Pagefind UI JS and initialise
+				import('/_pagefind/pagefind-ui.js').then(function (mod) {
+					const PagefindUI = mod.PagefindUI;
+					new PagefindUI({
+						element: '#search',
+						showSubResults: false,
+						resetStyles: false,
+					});
+					// Focus the input once ready
+					setTimeout(function () {
+						const input = document.querySelector('#search input[type=text]');
+						if (input) input.focus();
+					}, 80);
+				}).catch(function () {
+					document.getElementById('search').innerHTML =
+						'<p style="color:var(--text-muted);padding:1em 0;font-size:0.9em">Search index not available — run <code>npm run build</code> to generate it.</p>';
+				});
+			} else {
+				setTimeout(function () {
+					const input = document.querySelector('#search input[type=text]');
+					if (input) input.focus();
+				}, 80);
+			}
+		}
+
+		function closeSearch() {
+			overlay.classList.remove('is-open');
+			overlay.setAttribute('aria-hidden', 'true');
+			document.body.style.overflow = '';
+			trigger.focus();
+		}
+
+		trigger.addEventListener('click', openSearch);
+		closeBtn.addEventListener('click', closeSearch);
+		backdrop.addEventListener('click', closeSearch);
+
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+				closeSearch();
+			}
+			// '/' shortcut to open search (common convention, only when not typing)
+			if (e.key === '/' && !overlay.classList.contains('is-open')) {
+				const tag = document.activeElement && document.activeElement.tagName.toLowerCase();
+				if (tag !== 'input' && tag !== 'textarea' && tag !== 'select') {
+					e.preventDefault();
+					openSearch();
+				}
+			}
+		});
+	})();
+</script>

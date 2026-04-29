@@ -221,6 +221,24 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
 - **Em-dashes** are used liberally — they fit the conversational rhythm. Don't replace them with commas just to "fix" them.
 - **Numbers and units:** specific values (`2 A stall current`, `0.15 s/60°`) trump rounded ones. Get them from datasheets, not memory.
 
+## Search — Pagefind
+
+The blog uses [Pagefind](https://pagefind.app/) for client-side full-text search. A magnifying glass icon in the sticky header opens a modal search overlay. The `/` keyboard shortcut also opens it.
+
+**How it works:** `npm run build` runs `astro build` followed by `pagefind --site dist`. Pagefind crawls the generated HTML and writes a binary search index into `dist/_pagefind/`. At runtime, the Header loads `/_pagefind/pagefind-ui.js` and `/_pagefind/pagefind-ui.css` lazily on first open (they're loaded dynamically via `import()` so they don't block page load). No server required — the index is just static files served by Cloudflare Pages.
+
+**Search does not work in `npm run dev`** — expected behavior. The `_pagefind/` directory only exists after a full build. If you open search during dev, the overlay will show a friendly "run `npm run build` to generate it" message instead of crashing.
+
+**Where the search UI lives:** `src/components/Header.astro`. The overlay and its JS are entirely self-contained in that file — no separate search page or component. Pagefind's default CSS variables are overridden inside `#search { ... }` to match the GGG dark palette (`--pagefind-ui-primary: var(--accent)`, etc.).
+
+**Build script in `package.json`:**
+```json
+"build": "astro build && pagefind --site dist"
+```
+`pagefind` is a `devDependency` — Cloudflare Pages installs devDeps during CI builds so this works in production deploys without any extra config.
+
+**If you add new post templates or page layouts** that should be excluded from search indexing (e.g. a raw JSON feed, an auto-generated redirect page), add `data-pagefind-ignore` to the `<body>` or the relevant element and Pagefind will skip it.
+
 ## Things that have already been tried and ruled out
 
 - **AI-generated photo placeholders** (one round, then removed) — felt off, undermined authenticity.
