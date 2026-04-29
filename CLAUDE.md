@@ -112,8 +112,10 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
 ## Workflow for a new transcript-derived post
 
 ```
-1. Pick a video from the technical-content manifest
-   (115 candidates; see /Users/lonniehoneycutt/Library/Application Support/.../outputs/ggg_technical_videos.txt)
+1. Pick a video from the technical-content manifest in this repo:
+   - `data/technical-candidates.tsv` — filtered list of build/teach posts
+   - `data/videos.tsv` — full channel catalog if the candidate filter missed something
+   Run `python3 scripts/queue-status.py` to see how many are left and what's next.
 
 2. Pull metadata + transcript with yt-dlp:
    yt-dlp --skip-download --write-auto-subs --sub-lang en --sub-format vtt \
@@ -160,11 +162,17 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
 
 ## What's reusable / what's the manifest
 
-- Full channel manifest: `/Users/lonniehoneycutt/Library/Application Support/Claude/local-agent-mode-sessions/.../outputs/ggg_videos_flat.txt` (740 videos, all)
-- Technical-only filter: `ggg_technical_videos.txt` (115 videos)
-- Transcript and metadata for the MG995 pilot: `mg995_transcript.txt` and `cnOKG0fvZ4w.en.vtt`
+The manifest lives in the repo as the single source of truth — it persists across sessions and is diffable across refreshes.
 
-These outputs live in Claude's session sandbox and may not persist between sessions. If they're missing, regenerate with `yt-dlp` (commands in the workflow above).
+- `data/videos.tsv` — every video on the channel (~740 rows, sorted by id)
+- `data/technical-candidates.tsv` — filtered subset that could become posts (~114 rows)
+- `scripts/refresh-manifest.py` — regenerates both files; filter rules (INCLUDE_PATTERNS / EXCLUDE_PATTERNS) live at the top of this script
+- `scripts/queue-status.py` — derives published/remaining counts from blog frontmatter, no separate "published" list to keep in sync
+- `data/README.md` — explains the structure and refresh workflow
+
+When a published post references a video that the candidate filter missed, `queue-status.py` flags it and suggests tightening the filter rules.
+
+Per-video transcripts and metadata are pulled on demand at draft time (see workflow above) and are NOT committed to the repo — they're large and only needed once.
 
 ## When in doubt, match the pilot
 

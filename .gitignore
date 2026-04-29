@@ -23,6 +23,10 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# Python bytecode (from running scripts/*.py)
+__pycache__/
+*.pyc
+
 # secrets and credentials — defensive (these should never be in the project anyway)
 .git-credentials
 *.pat
