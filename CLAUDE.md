@@ -225,7 +225,7 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
 
 The blog uses [Pagefind](https://pagefind.app/) for client-side full-text search. A magnifying glass icon in the sticky header opens a modal search overlay. The `/` keyboard shortcut also opens it.
 
-**How it works:** `npm run build` runs `astro build` followed by `pagefind --site dist`. Pagefind crawls the generated HTML and writes a binary search index into `dist/_pagefind/`. At runtime, the Header loads `/_pagefind/pagefind-ui.js` and `/_pagefind/pagefind-ui.css` lazily on first open (they're loaded dynamically via `import()` so they don't block page load). No server required — the index is just static files served by Cloudflare Pages.
+**How it works:** `npm run build` runs `astro build` followed by `pagefind --site dist`. Pagefind crawls the generated HTML and writes a binary search index into `dist/pagefind/`. At runtime, the Header loads `/pagefind/pagefind-ui.js` and `/pagefind/pagefind-ui.css` lazily on first open (they're loaded dynamically via `import()` so they don't block page load). No server required — the index is just static files served by Cloudflare Pages.
 
 **Search does not work in `npm run dev`** — expected behavior. The `_pagefind/` directory only exists after a full build. If you open search during dev, the overlay will show a friendly "run `npm run build` to generate it" message instead of crashing.
 

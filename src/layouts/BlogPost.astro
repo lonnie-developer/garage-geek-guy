@@ -100,7 +100,7 @@ const watchUrl = youtubeId
 	<body>
 		<Header />
 		<main>
-			<article>
+			<article data-pagefind-body data-pagefind-meta={`title:${title}`}>
 				{youtubeId ? (
 					<div class="video-wrap">
 						<div class="youtube-embed">

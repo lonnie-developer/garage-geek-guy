@@ -275,11 +275,11 @@ import HeaderLink from './HeaderLink.astro';
 				// Load Pagefind CSS
 				const link = document.createElement('link');
 				link.rel = 'stylesheet';
-				link.href = '/_pagefind/pagefind-ui.css';
+				link.href = '/pagefind/pagefind-ui.css';
 				document.head.appendChild(link);
 
 				// Load Pagefind UI JS and initialise
-				import('/_pagefind/pagefind-ui.js').then(function (mod) {
+				import('/pagefind/pagefind-ui.js').then(function (mod) {
 					const PagefindUI = mod.PagefindUI;
 					new PagefindUI({
 						element: '#search',
