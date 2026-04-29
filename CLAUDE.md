@@ -9,10 +9,24 @@ Do these once at the start of a new session, before doing real work. They're che
 **1. Install yt-dlp** (used for pulling video metadata, transcripts, and thumbnails — needed for any new post):
 
 ```bash
-pip install --quiet --break-system-packages --no-warn-script-location yt-dlp
+pip install --quiet --break-system-packages --no-warn-script-location yt-dlp Pillow
 # yt-dlp will be at /sessions/<session-id>/.local/bin/yt-dlp
 # Either prepend that to PATH or invoke with the full path
 ```
+
+**yt-dlp JS runtime fix (important — required for subtitle download):** The sandbox does not have Deno installed, and yt-dlp ≥ 2025 requires a JS runtime for YouTube extraction. Without it, `--write-auto-subs` silently produces no VTT files. The fix is to pass the `node` runtime explicitly on every yt-dlp call that fetches subtitles or metadata:
+
+```bash
+NODE=$(which node)   # node is at /usr/bin/node in the sandbox
+YTDLP="/sessions/<session-id>/.local/bin/yt-dlp"
+
+$YTDLP --js-runtimes "node:$NODE" --skip-download --write-auto-subs \
+  --sub-lang en --sub-format vtt \
+  --output "/tmp/{slug}" \
+  "https://www.youtube.com/watch?v={VIDEO_ID}"
+```
+
+**If yt-dlp fails to produce VTT files, stop and check with Lonnie — do not proceed to write posts without transcripts.** The `--js-runtimes "node:..."` flag must appear on every invocation that downloads subtitles. The warning `No supported JavaScript runtime could be found` means the flag was omitted or incorrectly formatted.
 
 **2. Configure git auth using the persisted PAT.** The token lives in the user's persistent Claude memory store. Read it with the Read tool from the path indicated in `MEMORY.md` (the entry titled "GitHub PAT for garage-geek-guy"), then:
 
@@ -137,15 +151,21 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
    Run `python3 scripts/queue-status.py` to see how many are left and what's next.
 
 2. Pull metadata + transcript with yt-dlp:
-   yt-dlp --skip-download --write-auto-subs --sub-lang en --sub-format vtt \
+   NODE=$(which node)
+   YTDLP="/sessions/<session-id>/.local/bin/yt-dlp"
+   $YTDLP --js-runtimes "node:$NODE" \
+     --skip-download --write-auto-subs --sub-lang en --sub-format vtt \
      --print "ID: %(id)s" --print "TITLE: %(title)s" --print "UPLOAD: %(upload_date)s" \
      --print "DURATION: %(duration)s" --print "TAGS: %(tags)s" \
      --print "DESC_BEGIN" --print "%(description)s" --print "DESC_END" \
-     --output "{slug}" \
+     --output "/tmp/{slug}" \
      "https://www.youtube.com/watch?v={VIDEO_ID}"
+   # The --js-runtimes flag is required or subtitles will silently fail to download.
+   # Verify: ls /tmp/{slug}.en.vtt — if missing, stop and check with Lonnie.
 
 3. Pull thumbnail:
-   yt-dlp --skip-download --write-thumbnail --convert-thumbnails jpg \
+   $YTDLP --js-runtimes "node:$NODE" \
+     --skip-download --write-thumbnail --convert-thumbnails jpg \
      --output "src/assets/posts/{slug}/thumbnail" \
      "https://www.youtube.com/watch?v={VIDEO_ID}"
 
