@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+import { CHANNEL_URL, CHANNEL_HANDLE } from '../consts';
+---
+
+<Layout
+	title="About Garage Geek Guy"
+	description="Hands-on electronics, Arduino, and DIY projects from the workshop."
+	pubDate={new Date('April 28 2026')}
+>
+	<p>
+		<strong>Garage Geek Guy</strong> is a YouTube channel and companion blog about hands-on
+		electronics, Arduino, microcontrollers, and the kinds of weekend projects that start with
+		"I wonder if I could…" and end up scattered across the workbench.
+	</p>
+
+	<p>
+		Each post here is a written companion to a video on the channel — for people who'd rather
+		skim a build log, copy a snippet of code, or revisit a wiring diagram than scrub through a
+		20-minute video. The video is always embedded at the top of every post, so you can watch,
+		read, or both.
+	</p>
+
+	<h2>What you'll find here</h2>
+
+	<ul>
+		<li>Build logs from real projects, not idealized tutorials</li>
+		<li>Schematics, code snippets, and parts lists you can actually copy</li>
+		<li>Lessons learned the hard way — usually with a small puff of magic smoke</li>
+		<li>Links back to the source video on YouTube</li>
+	</ul>
+
+	<h2>Subscribe</h2>
+
+	<p>
+		New videos drop on the YouTube channel at <a href={CHANNEL_URL} target="_blank" rel="noopener"
+			>{CHANNEL_HANDLE}</a
+		>. If you prefer to read, follow along here — every post links back to the video, and there's
+		an <a href="/rss.xml">RSS feed</a> if that's your thing.
+	</p>
+</Layout>
