@@ -1,0 +1,680 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.610 --> 00:00:05.150 align:start position:0%
+ 
+okay<00:00:02.610><c> so</c><00:00:02.669><c> today</c><00:00:03.540><c> we</c><00:00:03.899><c> are</c><00:00:03.929><c> going</c><00:00:04.230><c> to</c><00:00:04.500><c> are</c><00:00:04.950><c> trying</c>
+
+00:00:05.150 --> 00:00:05.160 align:start position:0%
+okay so today we are going to are trying
+ 
+
+00:00:05.160 --> 00:00:10.330 align:start position:0%
+okay so today we are going to are trying
+to<00:00:05.490><c> install</c><00:00:05.940><c> this</c><00:00:06.180><c> Arduino</c><00:00:06.720><c> Uno</c><00:00:07.610><c> onto</c><00:00:08.610><c> this</c>
+
+00:00:10.330 --> 00:00:10.340 align:start position:0%
+to install this Arduino Uno onto this
+ 
+
+00:00:10.340 --> 00:00:14.780 align:start position:0%
+to install this Arduino Uno onto this
+MacBook<00:00:11.340><c> Air</c><00:00:11.759><c> via</c><00:00:12.750><c> the</c><00:00:13.080><c> USB</c><00:00:13.679><c> cable</c><00:00:14.040><c> there</c><00:00:14.400><c> and</c>
+
+00:00:14.780 --> 00:00:14.790 align:start position:0%
+MacBook Air via the USB cable there and
+ 
+
+00:00:14.790 --> 00:00:19.700 align:start position:0%
+MacBook Air via the USB cable there and
+I've<00:00:15.630><c> got</c><00:00:16.279><c> the</c><00:00:17.279><c> Arduino</c><00:00:17.730><c> IDE</c><00:00:17.970><c> install</c><00:00:18.779><c> the</c>
+
+00:00:19.700 --> 00:00:19.710 align:start position:0%
+I've got the Arduino IDE install the
+ 
+
+00:00:19.710 --> 00:00:22.759 align:start position:0%
+I've got the Arduino IDE install the
+downloaded<00:00:19.980><c> from</c><00:00:20.460><c> Arduino</c><00:00:20.910><c> CC</c><00:00:21.900><c> no</c><00:00:22.410><c> issues</c>
+
+00:00:22.759 --> 00:00:22.769 align:start position:0%
+downloaded from Arduino CC no issues
+ 
+
+00:00:22.769 --> 00:00:25.400 align:start position:0%
+downloaded from Arduino CC no issues
+there<00:00:23.070><c> the</c><00:00:23.730><c> problem</c><00:00:24.660><c> that</c><00:00:24.840><c> I'm</c><00:00:24.960><c> running</c><00:00:25.140><c> into</c>
+
+00:00:25.400 --> 00:00:25.410 align:start position:0%
+there the problem that I'm running into
+ 
+
+00:00:25.410 --> 00:00:28.009 align:start position:0%
+there the problem that I'm running into
+is<00:00:25.949><c> whenever</c><00:00:26.130><c> I</c><00:00:26.340><c> go</c><00:00:26.640><c> up</c><00:00:26.820><c> here</c><00:00:27.029><c> to</c><00:00:27.150><c> tools</c><00:00:27.359><c> and</c>
+
+00:00:28.009 --> 00:00:28.019 align:start position:0%
+is whenever I go up here to tools and
+ 
+
+00:00:28.019 --> 00:00:30.769 align:start position:0%
+is whenever I go up here to tools and
+then<00:00:28.109><c> ice</c><00:00:29.070><c> my</c><00:00:29.490><c> board</c><00:00:29.760><c> is</c><00:00:29.880><c> selected</c><00:00:30.390><c> Arduino</c>
+
+00:00:30.769 --> 00:00:30.779 align:start position:0%
+then ice my board is selected Arduino
+ 
+
+00:00:30.779 --> 00:00:33.530 align:start position:0%
+then ice my board is selected Arduino
+slash<00:00:31.289><c> genuine</c><00:00:31.890><c> Oh</c><00:00:32.009><c> who</c><00:00:32.219><c> no</c><00:00:32.399><c> that's</c><00:00:33.090><c> correct</c>
+
+00:00:33.530 --> 00:00:33.540 align:start position:0%
+slash genuine Oh who no that's correct
+ 
+
+00:00:33.540 --> 00:00:36.620 align:start position:0%
+slash genuine Oh who no that's correct
+but<00:00:34.200><c> when</c><00:00:34.320><c> I</c><00:00:34.350><c> go</c><00:00:34.620><c> down</c><00:00:34.829><c> here</c><00:00:35.280><c> to</c><00:00:35.520><c> the</c><00:00:36.149><c> serial</c>
+
+00:00:36.620 --> 00:00:36.630 align:start position:0%
+but when I go down here to the serial
+ 
+
+00:00:36.630 --> 00:00:37.340 align:start position:0%
+but when I go down here to the serial
+port
+
+00:00:37.340 --> 00:00:37.350 align:start position:0%
+port
+ 
+
+00:00:37.350 --> 00:00:40.729 align:start position:0%
+port
+I<00:00:37.579><c> have</c><00:00:38.579><c> no</c><00:00:38.790><c> serial</c><00:00:39.239><c> port</c><00:00:39.510><c> just</c><00:00:40.500><c> show</c><00:00:40.710><c> some</c>
+
+00:00:40.729 --> 00:00:40.739 align:start position:0%
+I have no serial port just show some
+ 
+
+00:00:40.739 --> 00:00:44.360 align:start position:0%
+I have no serial port just show some
+Bluetooth<00:00:41.690><c> Bluetooth</c><00:00:42.770><c> incoming</c><00:00:43.770><c> port</c><00:00:44.100><c> there</c>
+
+00:00:44.360 --> 00:00:44.370 align:start position:0%
+Bluetooth Bluetooth incoming port there
+ 
+
+00:00:44.370 --> 00:00:48.080 align:start position:0%
+Bluetooth Bluetooth incoming port there
+so<00:00:45.149><c> we</c><00:00:45.539><c> have</c><00:00:45.660><c> an</c><00:00:45.780><c> issue</c><00:00:45.899><c> so</c><00:00:46.789><c> did</c><00:00:47.789><c> a</c><00:00:47.820><c> little</c>
+
+00:00:48.080 --> 00:00:48.090 align:start position:0%
+so we have an issue so did a little
+ 
+
+00:00:48.090 --> 00:00:52.490 align:start position:0%
+so we have an issue so did a little
+research<00:00:48.239><c> and</c><00:00:49.760><c> came</c><00:00:50.760><c> up</c><00:00:50.969><c> with</c><00:00:51.329><c> I</c><00:00:51.719><c> need</c><00:00:51.840><c> to</c>
+
+00:00:52.490 --> 00:00:52.500 align:start position:0%
+research and came up with I need to
+ 
+
+00:00:52.500 --> 00:00:54.619 align:start position:0%
+research and came up with I need to
+download<00:00:52.739><c> this</c><00:00:53.160><c> driver</c><00:00:53.460><c> and</c><00:00:53.760><c> I</c><00:00:54.030><c> also</c><00:00:54.210><c> need</c><00:00:54.600><c> to</c>
+
+00:00:54.619 --> 00:00:54.629 align:start position:0%
+download this driver and I also need to
+ 
+
+00:00:54.629 --> 00:00:58.939 align:start position:0%
+download this driver and I also need to
+run<00:00:54.989><c> a</c><00:00:55.020><c> command</c><00:00:56.899><c> after</c><00:00:57.899><c> I</c><00:00:57.930><c> do</c><00:00:58.050><c> that</c><00:00:58.530><c> and</c><00:00:58.800><c> then</c>
+
+00:00:58.939 --> 00:00:58.949 align:start position:0%
+run a command after I do that and then
+ 
+
+00:00:58.949 --> 00:01:02.810 align:start position:0%
+run a command after I do that and then
+restart<00:00:59.520><c> the</c><00:00:59.760><c> Mac</c><00:01:00.770><c> the</c><00:01:01.770><c> issue</c><00:01:01.949><c> is</c><00:01:02.280><c> that</c><00:01:02.309><c> this</c>
+
+00:01:02.810 --> 00:01:02.820 align:start position:0%
+restart the Mac the issue is that this
+ 
+
+00:01:02.820 --> 00:01:06.289 align:start position:0%
+restart the Mac the issue is that this
+is<00:01:03.000><c> actually</c><00:01:03.480><c> a</c><00:01:03.510><c> clone</c><00:01:04.430><c> of</c><00:01:05.430><c> an</c><00:01:05.670><c> Arduino</c><00:01:05.939><c> Uno</c>
+
+00:01:06.289 --> 00:01:06.299 align:start position:0%
+is actually a clone of an Arduino Uno
+ 
+
+00:01:06.299 --> 00:01:09.020 align:start position:0%
+is actually a clone of an Arduino Uno
+it's<00:01:06.630><c> not</c><00:01:06.869><c> the</c><00:01:07.140><c> official</c><00:01:07.799><c> Arduino</c><00:01:08.250><c> Uno</c><00:01:08.430><c> so</c>
+
+00:01:09.020 --> 00:01:09.030 align:start position:0%
+it's not the official Arduino Uno so
+ 
+
+00:01:09.030 --> 00:01:11.359 align:start position:0%
+it's not the official Arduino Uno so
+that<00:01:09.960><c> is</c><00:01:10.170><c> the</c><00:01:10.350><c> problem</c><00:01:10.619><c> we're</c><00:01:10.920><c> running</c><00:01:11.189><c> into</c>
+
+00:01:11.359 --> 00:01:11.369 align:start position:0%
+that is the problem we're running into
+ 
+
+00:01:11.369 --> 00:01:16.100 align:start position:0%
+that is the problem we're running into
+I've<00:01:12.090><c> got</c><00:01:12.659><c> this</c><00:01:12.930><c> downloaded</c><00:01:14.210><c> open</c><00:01:15.210><c> it</c><00:01:15.299><c> up</c><00:01:15.420><c> see</c>
+
+00:01:16.100 --> 00:01:16.110 align:start position:0%
+I've got this downloaded open it up see
+ 
+
+00:01:16.110 --> 00:01:21.910 align:start position:0%
+I've got this downloaded open it up see
+what<00:01:16.259><c> happens</c>
+
+00:01:21.910 --> 00:01:21.920 align:start position:0%
+ 
+ 
+
+00:01:21.920 --> 00:01:42.730 align:start position:0%
+ 
+install<00:01:25.580><c> continue</c><00:01:27.650><c> and</c><00:01:28.650><c> install</c>
+
+00:01:42.730 --> 00:01:42.740 align:start position:0%
+ 
+ 
+
+00:01:42.740 --> 00:01:52.039 align:start position:0%
+ 
+seems<00:01:43.400><c> pretty</c><00:01:43.640><c> fast</c>
+
+00:01:52.039 --> 00:01:52.049 align:start position:0%
+ 
+ 
+
+00:01:52.049 --> 00:01:54.169 align:start position:0%
+ 
+okay<00:01:52.770><c> I</c><00:01:52.799><c> did</c><00:01:53.009><c> come</c><00:01:53.219><c> up</c><00:01:53.250><c> with</c><00:01:53.490><c> a</c><00:01:53.520><c> message</c><00:01:53.729><c> saying</c>
+
+00:01:54.169 --> 00:01:54.179 align:start position:0%
+okay I did come up with a message saying
+ 
+
+00:01:54.179 --> 00:01:57.980 align:start position:0%
+okay I did come up with a message saying
+I<00:01:54.450><c> needed</c><00:01:54.659><c> to</c><00:01:54.990><c> allow</c><00:01:56.270><c> change</c><00:01:57.270><c> my</c><00:01:57.509><c> security</c>
+
+00:01:57.980 --> 00:01:57.990 align:start position:0%
+I needed to allow change my security
+ 
+
+00:01:57.990 --> 00:02:00.109 align:start position:0%
+I needed to allow change my security
+preferences<00:01:58.619><c> so</c><00:01:59.159><c> I</c><00:01:59.189><c> had</c><00:01:59.369><c> to</c><00:01:59.490><c> allow</c><00:01:59.789><c> apps</c>
+
+00:02:00.109 --> 00:02:00.119 align:start position:0%
+preferences so I had to allow apps
+ 
+
+00:02:00.119 --> 00:02:03.550 align:start position:0%
+preferences so I had to allow apps
+downloaded<00:02:00.780><c> from</c><00:02:01.200><c> and</c><00:02:01.860><c> then</c><00:02:02.460><c> I</c><00:02:02.549><c> added</c><00:02:02.939><c> that</c>
+
+00:02:03.550 --> 00:02:03.560 align:start position:0%
+downloaded from and then I added that
+ 
+
+00:02:03.560 --> 00:02:08.180 align:start position:0%
+downloaded from and then I added that
+that<00:02:04.560><c> developer</c><00:02:05.189><c> so</c><00:02:06.530><c> there</c><00:02:07.530><c> we</c><00:02:07.590><c> go</c>
+
+00:02:08.180 --> 00:02:08.190 align:start position:0%
+that developer so there we go
+ 
+
+00:02:08.190 --> 00:02:19.850 align:start position:0%
+that developer so there we go
+I<00:02:13.879><c> think</c><00:02:14.879><c> it's</c><00:02:15.030><c> continuing</c><00:02:15.660><c> on</c><00:02:15.810><c> now</c><00:02:18.500><c> okay</c><00:02:19.500><c> now</c>
+
+00:02:19.850 --> 00:02:19.860 align:start position:0%
+I think it's continuing on now okay now
+ 
+
+00:02:19.860 --> 00:02:23.140 align:start position:0%
+I think it's continuing on now okay now
+it<00:02:19.980><c> says</c><00:02:20.190><c> the</c><00:02:20.340><c> installation</c><00:02:21.030><c> was</c><00:02:21.450><c> successful</c>
+
+00:02:23.140 --> 00:02:23.150 align:start position:0%
+it says the installation was successful
+ 
+
+00:02:23.150 --> 00:02:26.960 align:start position:0%
+it says the installation was successful
+one<00:02:24.150><c> more</c><00:02:24.450><c> thing</c><00:02:24.480><c> this</c><00:02:25.380><c> page</c><00:02:25.950><c> right</c><00:02:26.250><c> here</c><00:02:26.310><c> said</c>
+
+00:02:26.960 --> 00:02:26.970 align:start position:0%
+one more thing this page right here said
+ 
+
+00:02:26.970 --> 00:02:29.600 align:start position:0%
+one more thing this page right here said
+we<00:02:27.000><c> should</c><00:02:27.329><c> run</c><00:02:27.540><c> this</c><00:02:27.750><c> command</c><00:02:28.549><c> from</c><00:02:29.549><c> the</c>
+
+00:02:29.600 --> 00:02:29.610 align:start position:0%
+we should run this command from the
+ 
+
+00:02:29.610 --> 00:02:33.410 align:start position:0%
+we should run this command from the
+terminal<00:02:31.819><c> so</c><00:02:32.819><c> I'll</c><00:02:32.910><c> go</c><00:02:33.030><c> ahead</c><00:02:33.090><c> and</c><00:02:33.299><c> do</c><00:02:33.390><c> that</c>
+
+00:02:33.410 --> 00:02:33.420 align:start position:0%
+terminal so I'll go ahead and do that
+ 
+
+00:02:33.420 --> 00:02:36.490 align:start position:0%
+terminal so I'll go ahead and do that
+now
+
+00:02:36.490 --> 00:02:36.500 align:start position:0%
+ 
+ 
+
+00:02:36.500 --> 00:02:51.660 align:start position:0%
+ 
+open<00:02:37.500><c> up</c><00:02:37.620><c> terminal</c>
+
+00:02:51.660 --> 00:02:51.670 align:start position:0%
+ 
+ 
+
+00:02:51.670 --> 00:02:58.610 align:start position:0%
+ 
+and<00:02:52.300><c> I</c><00:02:52.569><c> ran</c><00:02:52.750><c> that</c><00:02:52.960><c> command</c>
+
+00:02:58.610 --> 00:02:58.620 align:start position:0%
+ 
+ 
+
+00:02:58.620 --> 00:03:01.800 align:start position:0%
+ 
+now<00:02:59.620><c> it</c><00:02:59.740><c> says</c><00:02:59.920><c> we</c><00:03:00.069><c> need</c><00:03:00.280><c> to</c><00:03:00.610><c> do</c><00:03:00.790><c> oh</c><00:03:01.030><c> and</c><00:03:01.300><c> I'll</c><00:03:01.660><c> go</c>
+
+00:03:01.800 --> 00:03:01.810 align:start position:0%
+now it says we need to do oh and I'll go
+ 
+
+00:03:01.810 --> 00:03:07.290 align:start position:0%
+now it says we need to do oh and I'll go
+back<00:03:01.840><c> over</c><00:03:02.020><c> here</c><00:03:05.430><c> ok</c><00:03:06.430><c> we'll</c><00:03:06.670><c> restart</c><00:03:07.090><c> right</c>
+
+00:03:07.290 --> 00:03:07.300 align:start position:0%
+back over here ok we'll restart right
+ 
+
+00:03:07.300 --> 00:03:09.080 align:start position:0%
+back over here ok we'll restart right
+here
+
+00:03:09.080 --> 00:03:09.090 align:start position:0%
+here
+ 
+
+00:03:09.090 --> 00:03:11.760 align:start position:0%
+here
+yeah<00:03:10.090><c> it's</c><00:03:10.240><c> final</c><00:03:10.510><c> move</c><00:03:10.660><c> to</c><00:03:10.780><c> trash</c><00:03:11.020><c> alright</c>
+
+00:03:11.760 --> 00:03:11.770 align:start position:0%
+yeah it's final move to trash alright
+ 
+
+00:03:11.770 --> 00:03:12.960 align:start position:0%
+yeah it's final move to trash alright
+we're<00:03:11.950><c> now</c><00:03:12.010><c> we're</c><00:03:12.220><c> gonna</c><00:03:12.310><c> let</c><00:03:12.490><c> the</c><00:03:12.610><c> computer</c>
+
+00:03:12.960 --> 00:03:12.970 align:start position:0%
+we're now we're gonna let the computer
+ 
+
+00:03:12.970 --> 00:03:18.030 align:start position:0%
+we're now we're gonna let the computer
+restart<00:03:15.570><c> ok</c><00:03:16.570><c> so</c><00:03:16.750><c> now</c><00:03:17.020><c> I'm</c><00:03:17.140><c> fresh</c><00:03:17.440><c> off</c><00:03:17.650><c> the</c>
+
+00:03:18.030 --> 00:03:18.040 align:start position:0%
+restart ok so now I'm fresh off the
+ 
+
+00:03:18.040 --> 00:03:21.390 align:start position:0%
+restart ok so now I'm fresh off the
+restart<00:03:18.550><c> and</c><00:03:19.470><c> our</c><00:03:20.470><c> do</c><00:03:20.709><c> we</c><00:03:20.800><c> know</c><00:03:20.920><c> is</c><00:03:21.070><c> loaded</c>
+
+00:03:21.390 --> 00:03:21.400 align:start position:0%
+restart and our do we know is loaded
+ 
+
+00:03:21.400 --> 00:03:26.330 align:start position:0%
+restart and our do we know is loaded
+back<00:03:21.550><c> up</c><00:03:22.560><c> so</c><00:03:23.560><c> we'll</c><00:03:23.650><c> go</c><00:03:23.800><c> back</c><00:03:23.830><c> to</c><00:03:24.280><c> tools</c><00:03:24.580><c> again</c>
+
+00:03:26.330 --> 00:03:26.340 align:start position:0%
+back up so we'll go back to tools again
+ 
+
+00:03:26.340 --> 00:03:30.840 align:start position:0%
+back up so we'll go back to tools again
+and<00:03:27.780><c> ok</c><00:03:28.780><c> or</c><00:03:29.230><c> do</c><00:03:29.440><c> we</c><00:03:29.530><c> know</c><00:03:29.680><c> genuine</c><00:03:30.130><c> jigna</c><00:03:30.730><c> we</c>
+
+00:03:30.840 --> 00:03:30.850 align:start position:0%
+and ok or do we know genuine jigna we
+ 
+
+00:03:30.850 --> 00:03:32.940 align:start position:0%
+and ok or do we know genuine jigna we
+know<00:03:31.000><c> new</c><00:03:31.360><c> is</c><00:03:31.630><c> still</c><00:03:31.870><c> selected</c><00:03:32.050><c> and</c><00:03:32.530><c> then</c><00:03:32.739><c> the</c>
+
+00:03:32.940 --> 00:03:32.950 align:start position:0%
+know new is still selected and then the
+ 
+
+00:03:32.950 --> 00:03:35.940 align:start position:0%
+know new is still selected and then the
+ports<00:03:33.459><c> we</c><00:03:34.390><c> see</c><00:03:34.630><c> an</c><00:03:34.720><c> additional</c><00:03:35.020><c> port</c><00:03:35.650><c> right</c>
+
+00:03:35.940 --> 00:03:35.950 align:start position:0%
+ports we see an additional port right
+ 
+
+00:03:35.950 --> 00:03:41.910 align:start position:0%
+ports we see an additional port right
+here<00:03:37.560><c> says</c><00:03:38.560><c> a</c><00:03:39.360><c> USB</c><00:03:40.360><c> serial</c><00:03:40.769><c> sounds</c><00:03:41.769><c> like</c>
+
+00:03:41.910 --> 00:03:41.920 align:start position:0%
+here says a USB serial sounds like
+ 
+
+00:03:41.920 --> 00:03:43.410 align:start position:0%
+here says a USB serial sounds like
+something<00:03:42.250><c> we</c><00:03:42.280><c> want</c><00:03:42.580><c> so</c><00:03:42.820><c> we'll</c><00:03:42.940><c> select</c><00:03:43.180><c> that</c>
+
+00:03:43.410 --> 00:03:43.420 align:start position:0%
+something we want so we'll select that
+ 
+
+00:03:43.420 --> 00:03:49.740 align:start position:0%
+something we want so we'll select that
+port<00:03:43.900><c> and</c><00:03:47.640><c> so</c><00:03:48.640><c> we're</c><00:03:48.760><c> gonna</c><00:03:48.850><c> load</c><00:03:49.209><c> up</c><00:03:49.269><c> the</c>
+
+00:03:49.740 --> 00:03:49.750 align:start position:0%
+port and so we're gonna load up the
+ 
+
+00:03:49.750 --> 00:03:53.670 align:start position:0%
+port and so we're gonna load up the
+blink<00:03:50.080><c> sketch</c><00:03:51.450><c> which</c><00:03:52.450><c> is</c><00:03:52.600><c> under</c><00:03:52.840><c> basics</c><00:03:53.380><c> and</c>
+
+00:03:53.670 --> 00:03:53.680 align:start position:0%
+blink sketch which is under basics and
+ 
+
+00:03:53.680 --> 00:03:57.440 align:start position:0%
+blink sketch which is under basics and
+blink<00:03:55.590><c> there</c><00:03:56.590><c> we</c><00:03:56.739><c> go</c>
+
+00:03:57.440 --> 00:03:57.450 align:start position:0%
+blink there we go
+ 
+
+00:03:57.450 --> 00:04:00.810 align:start position:0%
+blink there we go
+now<00:03:58.450><c> let's</c><00:03:58.780><c> see</c><00:03:59.110><c> if</c><00:03:59.350><c> we</c><00:03:59.500><c> can</c><00:03:59.680><c> upload</c><00:04:00.040><c> it</c><00:04:00.370><c> I'll</c>
+
+00:04:00.810 --> 00:04:00.820 align:start position:0%
+now let's see if we can upload it I'll
+ 
+
+00:04:00.820 --> 00:04:02.819 align:start position:0%
+now let's see if we can upload it I'll
+back<00:04:01.150><c> out</c><00:04:01.390><c> a</c><00:04:01.450><c> little</c><00:04:01.690><c> bit</c><00:04:01.959><c> you</c><00:04:02.260><c> can</c><00:04:02.380><c> see</c><00:04:02.440><c> right</c>
+
+00:04:02.819 --> 00:04:02.829 align:start position:0%
+back out a little bit you can see right
+ 
+
+00:04:02.829 --> 00:04:04.500 align:start position:0%
+back out a little bit you can see right
+now<00:04:03.040><c> we're</c><00:04:03.280><c> getting</c><00:04:03.519><c> a</c><00:04:03.579><c> fast</c><00:04:03.850><c> blink</c><00:04:04.239><c> on</c><00:04:04.390><c> that</c>
+
+00:04:04.500 --> 00:04:04.510 align:start position:0%
+now we're getting a fast blink on that
+ 
+
+00:04:04.510 --> 00:04:08.130 align:start position:0%
+now we're getting a fast blink on that
+led<00:04:04.660><c> it</c><00:04:05.590><c> should</c><00:04:05.920><c> be</c><00:04:06.070><c> one</c><00:04:06.370><c> blink</c><00:04:06.760><c> every</c><00:04:07.299><c> one</c>
+
+00:04:08.130 --> 00:04:08.140 align:start position:0%
+led it should be one blink every one
+ 
+
+00:04:08.140 --> 00:04:11.960 align:start position:0%
+led it should be one blink every one
+second<00:04:08.650><c> based</c><00:04:09.100><c> on</c><00:04:09.400><c> the</c><00:04:09.579><c> code</c><00:04:10.440><c> right</c><00:04:11.440><c> here</c>
+
+00:04:11.960 --> 00:04:11.970 align:start position:0%
+second based on the code right here
+ 
+
+00:04:11.970 --> 00:04:15.600 align:start position:0%
+second based on the code right here
+delay<00:04:12.970><c> 1000</c><00:04:13.810><c> press</c><00:04:14.140><c> 1000</c><00:04:14.829><c> milliseconds</c><00:04:15.430><c> which</c>
+
+00:04:15.600 --> 00:04:15.610 align:start position:0%
+delay 1000 press 1000 milliseconds which
+ 
+
+00:04:15.610 --> 00:04:19.469 align:start position:0%
+delay 1000 press 1000 milliseconds which
+is<00:04:15.760><c> a</c><00:04:15.790><c> second</c><00:04:16.209><c> so</c><00:04:16.989><c> let</c><00:04:17.470><c> me</c><00:04:17.560><c> hit</c><00:04:17.769><c> upload</c><00:04:18.479><c> let's</c>
+
+00:04:19.469 --> 00:04:19.479 align:start position:0%
+is a second so let me hit upload let's
+ 
+
+00:04:19.479 --> 00:04:21.090 align:start position:0%
+is a second so let me hit upload let's
+see<00:04:19.630><c> if</c><00:04:19.690><c> we</c><00:04:19.780><c> get</c><00:04:19.930><c> the</c><00:04:20.049><c> error</c><00:04:20.260><c> messages</c><00:04:20.829><c> first</c>
+
+00:04:21.090 --> 00:04:21.100 align:start position:0%
+see if we get the error messages first
+ 
+
+00:04:21.100 --> 00:04:29.610 align:start position:0%
+see if we get the error messages first
+of<00:04:21.250><c> all</c><00:04:25.020><c> ok</c><00:04:26.020><c> so</c><00:04:26.770><c> that</c><00:04:27.190><c> that</c><00:04:27.669><c> fast</c><00:04:28.030><c> blink</c><00:04:28.570><c> is</c><00:04:28.780><c> now</c>
+
+00:04:29.610 --> 00:04:29.620 align:start position:0%
+of all ok so that that fast blink is now
+ 
+
+00:04:29.620 --> 00:04:33.330 align:start position:0%
+of all ok so that that fast blink is now
+one<00:04:30.070><c> second</c><00:04:30.610><c> or</c><00:04:30.760><c> 1000</c><00:04:31.450><c> millisecond</c><00:04:32.130><c> so</c><00:04:33.130><c> that</c>
+
+00:04:33.330 --> 00:04:33.340 align:start position:0%
+one second or 1000 millisecond so that
+ 
+
+00:04:33.340 --> 00:04:37.080 align:start position:0%
+one second or 1000 millisecond so that
+worked<00:04:33.580><c> so</c><00:04:34.240><c> to</c><00:04:35.520><c> refresh</c><00:04:36.520><c> and</c><00:04:36.700><c> I'm</c><00:04:36.790><c> gonna</c><00:04:36.940><c> put</c>
+
+00:04:37.080 --> 00:04:37.090 align:start position:0%
+worked so to refresh and I'm gonna put
+ 
+
+00:04:37.090 --> 00:04:41.219 align:start position:0%
+worked so to refresh and I'm gonna put
+links<00:04:37.330><c> for</c><00:04:37.630><c> all</c><00:04:37.720><c> this</c><00:04:37.870><c> stuff</c><00:04:38.020><c> down</c><00:04:38.350><c> below</c><00:04:40.229><c> the</c>
+
+00:04:41.219 --> 00:04:41.229 align:start position:0%
+links for all this stuff down below the
+ 
+
+00:04:41.229 --> 00:04:43.050 align:start position:0%
+links for all this stuff down below the
+three<00:04:41.800><c> things</c><00:04:42.039><c> I</c><00:04:42.160><c> did</c><00:04:42.370><c> to</c><00:04:42.400><c> get</c><00:04:42.610><c> this</c><00:04:42.820><c> working</c>
+
+00:04:43.050 --> 00:04:43.060 align:start position:0%
+three things I did to get this working
+ 
+
+00:04:43.060 --> 00:04:46.980 align:start position:0%
+three things I did to get this working
+obviously<00:04:43.840><c> we</c><00:04:44.020><c> had</c><00:04:44.229><c> a</c><00:04:45.479><c> Arduino</c><00:04:46.479><c> installed</c>
+
+00:04:46.980 --> 00:04:46.990 align:start position:0%
+obviously we had a Arduino installed
+ 
+
+00:04:46.990 --> 00:04:48.690 align:start position:0%
+obviously we had a Arduino installed
+that<00:04:47.140><c> we</c><00:04:47.229><c> downloaded</c><00:04:47.410><c> from</c><00:04:47.800><c> the</c><00:04:48.070><c> Arduino</c><00:04:48.340><c> dot</c>
+
+00:04:48.690 --> 00:04:48.700 align:start position:0%
+that we downloaded from the Arduino dot
+ 
+
+00:04:48.700 --> 00:04:51.930 align:start position:0%
+that we downloaded from the Arduino dot
+CC<00:04:49.120><c> site</c><00:04:49.360><c> alright</c><00:04:50.289><c> and</c><00:04:50.590><c> then</c><00:04:51.039><c> the</c><00:04:51.460><c> next</c><00:04:51.789><c> thing</c>
+
+00:04:51.930 --> 00:04:51.940 align:start position:0%
+CC site alright and then the next thing
+ 
+
+00:04:51.940 --> 00:04:55.920 align:start position:0%
+CC site alright and then the next thing
+we<00:04:52.090><c> did</c><00:04:52.270><c> was</c><00:04:52.680><c> we</c><00:04:53.680><c> went</c><00:04:53.830><c> to</c><00:04:54.039><c> this</c><00:04:54.390><c> Chinese</c><00:04:55.390><c> page</c>
+
+00:04:55.920 --> 00:04:55.930 align:start position:0%
+we did was we went to this Chinese page
+ 
+
+00:04:55.930 --> 00:05:01.529 align:start position:0%
+we did was we went to this Chinese page
+to<00:04:56.830><c> get</c><00:04:56.979><c> the</c><00:04:57.190><c> driver</c><00:04:57.550><c> for</c><00:04:58.450><c> for</c><00:04:59.350><c> this</c><00:04:59.620><c> I</c><00:05:00.539><c> guess</c>
+
+00:05:01.529 --> 00:05:01.539 align:start position:0%
+to get the driver for for this I guess
+ 
+
+00:05:01.539 --> 00:05:06.570 align:start position:0%
+to get the driver for for this I guess
+it's<00:05:01.750><c> a</c><00:05:03.210><c> serial</c><00:05:04.210><c> USB</c><00:05:05.110><c> converter</c><00:05:05.410><c> that's</c><00:05:06.310><c> on</c>
+
+00:05:06.570 --> 00:05:06.580 align:start position:0%
+it's a serial USB converter that's on
+ 
+
+00:05:06.580 --> 00:05:08.439 align:start position:0%
+it's a serial USB converter that's on
+this<00:05:07.110><c> this</c>
+
+00:05:08.439 --> 00:05:08.449 align:start position:0%
+this this
+ 
+
+00:05:08.449 --> 00:05:11.559 align:start position:0%
+this this
+cloned<00:05:09.110><c> board</c><00:05:09.650><c> we</c><00:05:10.490><c> need</c><00:05:10.669><c> a</c><00:05:10.699><c> driver</c><00:05:11.060><c> for</c><00:05:11.509><c> that</c>
+
+00:05:11.559 --> 00:05:11.569 align:start position:0%
+cloned board we need a driver for that
+ 
+
+00:05:11.569 --> 00:05:14.320 align:start position:0%
+cloned board we need a driver for that
+converter<00:05:12.530><c> and</c><00:05:12.830><c> that's</c><00:05:13.550><c> what</c><00:05:13.759><c> this</c><00:05:13.909><c> is</c><00:05:13.969><c> right</c>
+
+00:05:14.320 --> 00:05:14.330 align:start position:0%
+converter and that's what this is right
+ 
+
+00:05:14.330 --> 00:05:17.050 align:start position:0%
+converter and that's what this is right
+here<00:05:14.629><c> we</c><00:05:15.289><c> installed</c><00:05:15.740><c> that</c><00:05:15.889><c> you</c><00:05:16.550><c> have</c><00:05:16.699><c> to</c><00:05:16.819><c> click</c>
+
+00:05:17.050 --> 00:05:17.060 align:start position:0%
+here we installed that you have to click
+ 
+
+00:05:17.060 --> 00:05:19.119 align:start position:0%
+here we installed that you have to click
+on<00:05:17.090><c> a</c><00:05:17.240><c> few</c><00:05:17.479><c> security</c><00:05:17.990><c> things</c><00:05:18.229><c> we</c><00:05:18.469><c> also</c><00:05:18.680><c> ran</c>
+
+00:05:19.119 --> 00:05:19.129 align:start position:0%
+on a few security things we also ran
+ 
+
+00:05:19.129 --> 00:05:22.860 align:start position:0%
+on a few security things we also ran
+that<00:05:19.819><c> command</c><00:05:20.360><c> in</c><00:05:20.599><c> the</c><00:05:20.780><c> terminal</c><00:05:21.370><c> after</c><00:05:22.370><c> that</c>
+
+00:05:22.860 --> 00:05:22.870 align:start position:0%
+that command in the terminal after that
+ 
+
+00:05:22.870 --> 00:05:26.350 align:start position:0%
+that command in the terminal after that
+restarted<00:05:23.870><c> the</c><00:05:23.930><c> computer</c><00:05:24.080><c> and</c><00:05:25.240><c> it</c><00:05:26.240><c> was</c>
+
+00:05:26.350 --> 00:05:26.360 align:start position:0%
+restarted the computer and it was
+ 
+
+00:05:26.360 --> 00:05:28.390 align:start position:0%
+restarted the computer and it was
+working<00:05:26.689><c> fun</c><00:05:26.900><c> so</c><00:05:27.409><c> hopefully</c><00:05:27.919><c> that</c><00:05:28.069><c> will</c><00:05:28.189><c> work</c>
+
+00:05:28.390 --> 00:05:28.400 align:start position:0%
+working fun so hopefully that will work
+ 
+
+00:05:28.400 --> 00:05:30.399 align:start position:0%
+working fun so hopefully that will work
+for<00:05:28.669><c> you</c><00:05:28.849><c> there</c><00:05:29.419><c> will</c><00:05:29.539><c> be</c><00:05:29.599><c> links</c><00:05:29.990><c> and</c>
+
+00:05:30.399 --> 00:05:30.409 align:start position:0%
+for you there will be links and
+ 
+
+00:05:30.409 --> 00:05:33.219 align:start position:0%
+for you there will be links and
+everything<00:05:31.219><c> down</c><00:05:31.490><c> below</c><00:05:31.849><c> for</c><00:05:32.599><c> everything</c><00:05:33.169><c> I</c>
+
+00:05:33.219 --> 00:05:33.229 align:start position:0%
+everything down below for everything I
+ 
+
+00:05:33.229 --> 00:05:34.809 align:start position:0%
+everything down below for everything I
+discussed<00:05:33.650><c> in</c><00:05:33.770><c> this</c><00:05:33.860><c> video</c><00:05:34.069><c> thanks</c><00:05:34.789><c> for</c>
+
+00:05:34.809 --> 00:05:34.819 align:start position:0%
+discussed in this video thanks for
+ 
+
+00:05:34.819 --> 00:05:37.240 align:start position:0%
+discussed in this video thanks for
+watching
+

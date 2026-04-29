@@ -1,0 +1,952 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.320 --> 00:00:03.270 align:start position:0%
+ 
+this<00:00:00.560><c> is</c><00:00:00.719><c> a</c><00:00:00.880><c> pir</c><00:00:01.599><c> sensor</c><00:00:02.399><c> specifically</c><00:00:03.120><c> an</c>
+
+00:00:03.270 --> 00:00:03.280 align:start position:0%
+this is a pir sensor specifically an
+ 
+
+00:00:03.280 --> 00:00:03.990 align:start position:0%
+this is a pir sensor specifically an
+elegu
+
+00:00:03.990 --> 00:00:04.000 align:start position:0%
+elegu
+ 
+
+00:00:04.000 --> 00:00:07.030 align:start position:0%
+elegu
+hc<00:00:05.240><c> sr501</c>
+
+00:00:07.030 --> 00:00:07.040 align:start position:0%
+hc sr501
+ 
+
+00:00:07.040 --> 00:00:09.589 align:start position:0%
+hc sr501
+we<00:00:07.200><c> can</c><00:00:07.359><c> use</c><00:00:07.600><c> a</c><00:00:07.759><c> pir</c><00:00:08.320><c> sensor</c><00:00:08.720><c> in</c><00:00:08.880><c> our</c><00:00:09.040><c> projects</c>
+
+00:00:09.589 --> 00:00:09.599 align:start position:0%
+we can use a pir sensor in our projects
+ 
+
+00:00:09.599 --> 00:00:11.430 align:start position:0%
+we can use a pir sensor in our projects
+to<00:00:09.760><c> detect</c><00:00:10.160><c> motion</c>
+
+00:00:11.430 --> 00:00:11.440 align:start position:0%
+to detect motion
+ 
+
+00:00:11.440 --> 00:00:14.910 align:start position:0%
+to detect motion
+let's<00:00:11.759><c> take</c><00:00:11.920><c> a</c><00:00:12.080><c> look</c><00:00:12.480><c> at</c><00:00:12.559><c> the</c><00:00:12.799><c> pir</c><00:00:13.519><c> sensor</c>
+
+00:00:14.910 --> 00:00:14.920 align:start position:0%
+let's take a look at the pir sensor
+ 
+
+00:00:14.920 --> 00:00:18.150 align:start position:0%
+let's take a look at the pir sensor
+itself<00:00:15.920><c> if</c><00:00:16.000><c> we</c><00:00:16.160><c> look</c><00:00:16.400><c> at</c><00:00:16.480><c> the</c><00:00:16.720><c> bottom</c>
+
+00:00:18.150 --> 00:00:18.160 align:start position:0%
+itself if we look at the bottom
+ 
+
+00:00:18.160 --> 00:00:21.750 align:start position:0%
+itself if we look at the bottom
+side<00:00:19.039><c> we</c><00:00:19.279><c> will</c><00:00:19.520><c> see</c><00:00:20.000><c> three</c>
+
+00:00:21.750 --> 00:00:21.760 align:start position:0%
+side we will see three
+ 
+
+00:00:21.760 --> 00:00:25.509 align:start position:0%
+side we will see three
+pin<00:00:22.000><c> headers</c><00:00:22.400><c> here</c><00:00:22.720><c> here</c><00:00:23.519><c> and</c><00:00:23.760><c> here</c><00:00:24.320><c> power</c>
+
+00:00:25.509 --> 00:00:25.519 align:start position:0%
+pin headers here here and here power
+ 
+
+00:00:25.519 --> 00:00:28.950 align:start position:0%
+pin headers here here and here power
+ground<00:00:26.080><c> and</c><00:00:26.240><c> the</c><00:00:26.400><c> middle</c><00:00:26.800><c> pin</c><00:00:27.439><c> is</c><00:00:27.599><c> the</c><00:00:27.760><c> output</c>
+
+00:00:28.950 --> 00:00:28.960 align:start position:0%
+ground and the middle pin is the output
+ 
+
+00:00:28.960 --> 00:00:34.069 align:start position:0%
+ground and the middle pin is the output
+on<00:00:29.199><c> my</c><00:00:29.519><c> pir</c><00:00:31.359><c> the</c><00:00:31.599><c> labels</c><00:00:32.000><c> for</c><00:00:32.160><c> the</c><00:00:32.399><c> three</c><00:00:32.719><c> pins</c>
+
+00:00:34.069 --> 00:00:34.079 align:start position:0%
+on my pir the labels for the three pins
+ 
+
+00:00:34.079 --> 00:00:35.750 align:start position:0%
+on my pir the labels for the three pins
+were<00:00:34.320><c> hidden</c><00:00:34.800><c> underneath</c><00:00:35.200><c> this</c><00:00:35.440><c> little</c>
+
+00:00:35.750 --> 00:00:35.760 align:start position:0%
+were hidden underneath this little
+ 
+
+00:00:35.760 --> 00:00:37.750 align:start position:0%
+were hidden underneath this little
+plastic<00:00:36.399><c> dome</c>
+
+00:00:37.750 --> 00:00:37.760 align:start position:0%
+plastic dome
+ 
+
+00:00:37.760 --> 00:00:41.830 align:start position:0%
+plastic dome
+if<00:00:37.840><c> we</c><00:00:38.000><c> take</c><00:00:38.160><c> that</c><00:00:38.399><c> off</c><00:00:38.719><c> i</c><00:00:38.800><c> can</c><00:00:39.040><c> see</c><00:00:39.600><c> here</c><00:00:40.320><c> vcc</c>
+
+00:00:41.830 --> 00:00:41.840 align:start position:0%
+if we take that off i can see here vcc
+ 
+
+00:00:41.840 --> 00:00:45.990 align:start position:0%
+if we take that off i can see here vcc
+ground<00:00:42.879><c> and</c><00:00:43.200><c> out</c><00:00:43.680><c> right</c><00:00:44.079><c> here</c>
+
+00:00:45.990 --> 00:00:46.000 align:start position:0%
+ground and out right here
+ 
+
+00:00:46.000 --> 00:00:48.709 align:start position:0%
+ground and out right here
+there<00:00:46.160><c> are</c><00:00:46.320><c> two</c><00:00:46.680><c> potentiometers</c><00:00:48.239><c> one</c><00:00:48.480><c> will</c>
+
+00:00:48.709 --> 00:00:48.719 align:start position:0%
+there are two potentiometers one will
+ 
+
+00:00:48.719 --> 00:00:49.270 align:start position:0%
+there are two potentiometers one will
+adjust
+
+00:00:49.270 --> 00:00:49.280 align:start position:0%
+adjust
+ 
+
+00:00:49.280 --> 00:00:51.830 align:start position:0%
+adjust
+the<00:00:49.520><c> sensitivity</c><00:00:50.239><c> of</c><00:00:50.399><c> the</c><00:00:50.480><c> pir</c><00:00:51.360><c> the</c><00:00:51.520><c> other</c>
+
+00:00:51.830 --> 00:00:51.840 align:start position:0%
+the sensitivity of the pir the other
+ 
+
+00:00:51.840 --> 00:00:53.830 align:start position:0%
+the sensitivity of the pir the other
+part<00:00:52.160><c> will</c><00:00:52.399><c> change</c><00:00:52.719><c> the</c><00:00:52.879><c> amount</c><00:00:53.199><c> of</c><00:00:53.360><c> time</c><00:00:53.680><c> the</c>
+
+00:00:53.830 --> 00:00:53.840 align:start position:0%
+part will change the amount of time the
+ 
+
+00:00:53.840 --> 00:00:55.270 align:start position:0%
+part will change the amount of time the
+pir<00:00:54.399><c> will</c><00:00:54.640><c> wait</c>
+
+00:00:55.270 --> 00:00:55.280 align:start position:0%
+pir will wait
+ 
+
+00:00:55.280 --> 00:00:58.069 align:start position:0%
+pir will wait
+after<00:00:55.680><c> it</c><00:00:55.840><c> has</c><00:00:56.079><c> detected</c><00:00:56.640><c> motion</c><00:00:57.440><c> to</c><00:00:57.600><c> begin</c>
+
+00:00:58.069 --> 00:00:58.079 align:start position:0%
+after it has detected motion to begin
+ 
+
+00:00:58.079 --> 00:01:00.069 align:start position:0%
+after it has detected motion to begin
+detecting<00:00:58.559><c> motion</c><00:00:59.039><c> again</c>
+
+00:01:00.069 --> 00:01:00.079 align:start position:0%
+detecting motion again
+ 
+
+00:01:00.079 --> 00:01:03.029 align:start position:0%
+detecting motion again
+full<00:01:00.399><c> clockwise</c><00:01:01.199><c> on</c><00:01:01.359><c> the</c><00:01:01.440><c> sensitivity</c><00:01:02.239><c> pot</c><00:01:02.879><c> is</c>
+
+00:01:03.029 --> 00:01:03.039 align:start position:0%
+full clockwise on the sensitivity pot is
+ 
+
+00:01:03.039 --> 00:01:04.710 align:start position:0%
+full clockwise on the sensitivity pot is
+the<00:01:03.120><c> highest</c><00:01:03.520><c> sensitivity</c>
+
+00:01:04.710 --> 00:01:04.720 align:start position:0%
+the highest sensitivity
+ 
+
+00:01:04.720 --> 00:01:07.429 align:start position:0%
+the highest sensitivity
+fully<00:01:05.199><c> counterclockwise</c><00:01:06.159><c> on</c><00:01:06.320><c> the</c><00:01:06.479><c> timer</c><00:01:06.880><c> pot</c>
+
+00:01:07.429 --> 00:01:07.439 align:start position:0%
+fully counterclockwise on the timer pot
+ 
+
+00:01:07.439 --> 00:01:09.270 align:start position:0%
+fully counterclockwise on the timer pot
+is<00:01:07.600><c> the</c><00:01:07.760><c> lowest</c><00:01:08.159><c> amount</c><00:01:08.400><c> of</c><00:01:08.640><c> time</c>
+
+00:01:09.270 --> 00:01:09.280 align:start position:0%
+is the lowest amount of time
+ 
+
+00:01:09.280 --> 00:01:11.350 align:start position:0%
+is the lowest amount of time
+which<00:01:09.520><c> i've</c><00:01:09.680><c> noticed</c><00:01:10.159><c> is</c><00:01:10.320><c> approximately</c><00:01:11.119><c> 10</c>
+
+00:01:11.350 --> 00:01:11.360 align:start position:0%
+which i've noticed is approximately 10
+ 
+
+00:01:11.360 --> 00:01:12.710 align:start position:0%
+which i've noticed is approximately 10
+seconds
+
+00:01:12.710 --> 00:01:12.720 align:start position:0%
+seconds
+ 
+
+00:01:12.720 --> 00:01:15.109 align:start position:0%
+seconds
+on<00:01:12.960><c> my</c><00:01:13.200><c> pir</c><00:01:13.840><c> the</c><00:01:14.000><c> pots</c><00:01:14.320><c> were</c><00:01:14.400><c> not</c><00:01:14.640><c> labeled</c><00:01:14.960><c> in</c>
+
+00:01:15.109 --> 00:01:15.119 align:start position:0%
+on my pir the pots were not labeled in
+ 
+
+00:01:15.119 --> 00:01:17.109 align:start position:0%
+on my pir the pots were not labeled in
+any<00:01:15.280><c> way</c><00:01:15.600><c> so</c><00:01:15.759><c> i</c><00:01:15.840><c> had</c><00:01:16.000><c> to</c><00:01:16.080><c> figure</c><00:01:16.400><c> out</c><00:01:16.640><c> which</c><00:01:16.880><c> was</c>
+
+00:01:17.109 --> 00:01:17.119 align:start position:0%
+any way so i had to figure out which was
+ 
+
+00:01:17.119 --> 00:01:18.149 align:start position:0%
+any way so i had to figure out which was
+which
+
+00:01:18.149 --> 00:01:18.159 align:start position:0%
+which
+ 
+
+00:01:18.159 --> 00:01:20.870 align:start position:0%
+which
+i<00:01:18.400><c> used</c><00:01:18.640><c> a</c><00:01:18.880><c> marker</c><00:01:19.360><c> to</c><00:01:19.520><c> color</c><00:01:19.840><c> the</c><00:01:20.080><c> sensitivity</c>
+
+00:01:20.870 --> 00:01:20.880 align:start position:0%
+i used a marker to color the sensitivity
+ 
+
+00:01:20.880 --> 00:01:22.550 align:start position:0%
+i used a marker to color the sensitivity
+pot<00:01:21.200><c> see</c><00:01:21.439><c> it</c><00:01:21.680><c> right</c>
+
+00:01:22.550 --> 00:01:22.560 align:start position:0%
+pot see it right
+ 
+
+00:01:22.560 --> 00:01:24.550 align:start position:0%
+pot see it right
+there<00:01:23.040><c> so</c><00:01:23.200><c> i</c><00:01:23.280><c> know</c><00:01:23.520><c> this</c><00:01:23.759><c> one</c><00:01:23.920><c> controls</c><00:01:24.400><c> the</c>
+
+00:01:24.550 --> 00:01:24.560 align:start position:0%
+there so i know this one controls the
+ 
+
+00:01:24.560 --> 00:01:25.590 align:start position:0%
+there so i know this one controls the
+sensitivity
+
+00:01:25.590 --> 00:01:25.600 align:start position:0%
+sensitivity
+ 
+
+00:01:25.600 --> 00:01:29.190 align:start position:0%
+sensitivity
+and<00:01:25.759><c> this</c><00:01:25.920><c> one</c><00:01:26.159><c> controls</c><00:01:26.720><c> the</c><00:01:26.960><c> time</c>
+
+00:01:29.190 --> 00:01:29.200 align:start position:0%
+and this one controls the time
+ 
+
+00:01:29.200 --> 00:01:31.990 align:start position:0%
+and this one controls the time
+there<00:01:29.439><c> is</c><00:01:29.759><c> also</c><00:01:30.079><c> a</c><00:01:30.240><c> jumper</c><00:01:30.640><c> right</c><00:01:30.960><c> here</c><00:01:31.680><c> which</c>
+
+00:01:31.990 --> 00:01:32.000 align:start position:0%
+there is also a jumper right here which
+ 
+
+00:01:32.000 --> 00:01:32.870 align:start position:0%
+there is also a jumper right here which
+is<00:01:32.159><c> labeled</c>
+
+00:01:32.870 --> 00:01:32.880 align:start position:0%
+is labeled
+ 
+
+00:01:32.880 --> 00:01:36.310 align:start position:0%
+is labeled
+h<00:01:33.439><c> for</c><00:01:33.680><c> high</c><00:01:34.240><c> or</c><00:01:34.479><c> l</c><00:01:34.720><c> for</c><00:01:34.960><c> low</c><00:01:35.600><c> when</c><00:01:35.759><c> the</c><00:01:35.920><c> jumper</c>
+
+00:01:36.310 --> 00:01:36.320 align:start position:0%
+h for high or l for low when the jumper
+ 
+
+00:01:36.320 --> 00:01:36.710 align:start position:0%
+h for high or l for low when the jumper
+is<00:01:36.479><c> on</c>
+
+00:01:36.710 --> 00:01:36.720 align:start position:0%
+is on
+ 
+
+00:01:36.720 --> 00:01:39.749 align:start position:0%
+is on
+h<00:01:37.200><c> the</c><00:01:37.360><c> pir</c><00:01:38.079><c> will</c><00:01:38.240><c> output</c><00:01:38.640><c> a</c><00:01:38.720><c> logical</c><00:01:39.200><c> high</c><00:01:39.520><c> or</c>
+
+00:01:39.749 --> 00:01:39.759 align:start position:0%
+h the pir will output a logical high or
+ 
+
+00:01:39.759 --> 00:01:40.710 align:start position:0%
+h the pir will output a logical high or
+5<00:01:40.079><c> volts</c>
+
+00:01:40.710 --> 00:01:40.720 align:start position:0%
+5 volts
+ 
+
+00:01:40.720 --> 00:01:42.950 align:start position:0%
+5 volts
+when<00:01:40.960><c> it</c><00:01:41.040><c> detects</c><00:01:41.520><c> motion</c><00:01:42.240><c> and</c><00:01:42.320><c> will</c><00:01:42.479><c> continue</c>
+
+00:01:42.950 --> 00:01:42.960 align:start position:0%
+when it detects motion and will continue
+ 
+
+00:01:42.960 --> 00:01:44.230 align:start position:0%
+when it detects motion and will continue
+to<00:01:43.119><c> output</c><00:01:43.520><c> a</c><00:01:43.600><c> high</c>
+
+00:01:44.230 --> 00:01:44.240 align:start position:0%
+to output a high
+ 
+
+00:01:44.240 --> 00:01:46.310 align:start position:0%
+to output a high
+until<00:01:44.479><c> the</c><00:01:44.640><c> timer</c><00:01:44.960><c> runs</c><00:01:45.360><c> out</c><00:01:45.920><c> whether</c>
+
+00:01:46.310 --> 00:01:46.320 align:start position:0%
+until the timer runs out whether
+ 
+
+00:01:46.320 --> 00:01:49.350 align:start position:0%
+until the timer runs out whether
+additional<00:01:46.799><c> motion</c><00:01:47.200><c> is</c><00:01:47.360><c> detected</c><00:01:48.000><c> or</c><00:01:48.159><c> not</c>
+
+00:01:49.350 --> 00:01:49.360 align:start position:0%
+additional motion is detected or not
+ 
+
+00:01:49.360 --> 00:01:51.910 align:start position:0%
+additional motion is detected or not
+once<00:01:49.600><c> the</c><00:01:49.680><c> timer</c><00:01:50.000><c> has</c><00:01:50.240><c> elapsed</c><00:01:51.040><c> the</c><00:01:51.200><c> pir</c><00:01:51.759><c> will</c>
+
+00:01:51.910 --> 00:01:51.920 align:start position:0%
+once the timer has elapsed the pir will
+ 
+
+00:01:51.920 --> 00:01:53.190 align:start position:0%
+once the timer has elapsed the pir will
+go<00:01:52.240><c> low</c><00:01:52.560><c> again</c>
+
+00:01:53.190 --> 00:01:53.200 align:start position:0%
+go low again
+ 
+
+00:01:53.200 --> 00:01:55.990 align:start position:0%
+go low again
+unless<00:01:53.680><c> motion</c><00:01:54.079><c> is</c><00:01:54.159><c> detected</c><00:01:54.720><c> again</c><00:01:55.680><c> when</c><00:01:55.920><c> the</c>
+
+00:01:55.990 --> 00:01:56.000 align:start position:0%
+unless motion is detected again when the
+ 
+
+00:01:56.000 --> 00:01:56.870 align:start position:0%
+unless motion is detected again when the
+jumper<00:01:56.399><c> is</c><00:01:56.560><c> on</c>
+
+00:01:56.870 --> 00:01:56.880 align:start position:0%
+jumper is on
+ 
+
+00:01:56.880 --> 00:02:00.310 align:start position:0%
+jumper is on
+l<00:01:57.600><c> or</c><00:01:57.840><c> low</c><00:01:58.560><c> the</c><00:01:58.719><c> pir</c><00:01:59.280><c> will</c><00:01:59.680><c> alternate</c>
+
+00:02:00.310 --> 00:02:00.320 align:start position:0%
+l or low the pir will alternate
+ 
+
+00:02:00.320 --> 00:02:03.030 align:start position:0%
+l or low the pir will alternate
+output<00:02:00.960><c> high</c><00:02:01.360><c> or</c><00:02:01.520><c> low</c><00:02:01.920><c> each</c><00:02:02.240><c> time</c><00:02:02.479><c> it</c><00:02:02.560><c> detects</c>
+
+00:02:03.030 --> 00:02:03.040 align:start position:0%
+output high or low each time it detects
+ 
+
+00:02:03.040 --> 00:02:03.749 align:start position:0%
+output high or low each time it detects
+motion
+
+00:02:03.749 --> 00:02:03.759 align:start position:0%
+motion
+ 
+
+00:02:03.759 --> 00:02:05.830 align:start position:0%
+motion
+for<00:02:04.000><c> our</c><00:02:04.240><c> purposes</c><00:02:04.799><c> today</c><00:02:05.119><c> we</c><00:02:05.280><c> will</c><00:02:05.439><c> leave</c><00:02:05.680><c> it</c>
+
+00:02:05.830 --> 00:02:05.840 align:start position:0%
+for our purposes today we will leave it
+ 
+
+00:02:05.840 --> 00:02:07.510 align:start position:0%
+for our purposes today we will leave it
+on<00:02:06.320><c> high</c>
+
+00:02:07.510 --> 00:02:07.520 align:start position:0%
+on high
+ 
+
+00:02:07.520 --> 00:02:09.830 align:start position:0%
+on high
+here<00:02:07.680><c> we</c><00:02:07.920><c> have</c><00:02:08.239><c> an</c><00:02:08.479><c> led</c><00:02:09.200><c> and</c><00:02:09.280><c> a</c><00:02:09.440><c> current</c>
+
+00:02:09.830 --> 00:02:09.840 align:start position:0%
+here we have an led and a current
+ 
+
+00:02:09.840 --> 00:02:11.589 align:start position:0%
+here we have an led and a current
+limiting<00:02:10.319><c> resistor</c>
+
+00:02:11.589 --> 00:02:11.599 align:start position:0%
+limiting resistor
+ 
+
+00:02:11.599 --> 00:02:15.110 align:start position:0%
+limiting resistor
+as<00:02:11.840><c> you</c><00:02:11.920><c> can</c><00:02:12.239><c> see</c><00:02:13.840><c> when</c><00:02:14.000><c> i</c><00:02:14.239><c> apply</c>
+
+00:02:15.110 --> 00:02:15.120 align:start position:0%
+as you can see when i apply
+ 
+
+00:02:15.120 --> 00:02:20.229 align:start position:0%
+as you can see when i apply
+5<00:02:15.440><c> volts</c><00:02:15.760><c> to</c><00:02:15.920><c> the</c><00:02:16.080><c> anode</c><00:02:18.000><c> right</c><00:02:18.319><c> here</c>
+
+00:02:20.229 --> 00:02:20.239 align:start position:0%
+5 volts to the anode right here
+ 
+
+00:02:20.239 --> 00:02:23.270 align:start position:0%
+5 volts to the anode right here
+it<00:02:20.400><c> lights</c><00:02:20.840><c> up</c><00:02:21.920><c> so</c><00:02:22.160><c> let's</c><00:02:22.400><c> set</c><00:02:22.640><c> this</c><00:02:22.879><c> circuit</c>
+
+00:02:23.270 --> 00:02:23.280 align:start position:0%
+it lights up so let's set this circuit
+ 
+
+00:02:23.280 --> 00:02:23.589 align:start position:0%
+it lights up so let's set this circuit
+up
+
+00:02:23.589 --> 00:02:23.599 align:start position:0%
+up
+ 
+
+00:02:23.599 --> 00:02:26.150 align:start position:0%
+up
+so<00:02:23.760><c> that</c><00:02:23.920><c> the</c><00:02:24.080><c> led</c><00:02:24.560><c> will</c><00:02:24.879><c> light</c><00:02:25.200><c> when</c><00:02:25.360><c> the</c><00:02:25.599><c> pir</c>
+
+00:02:26.150 --> 00:02:26.160 align:start position:0%
+so that the led will light when the pir
+ 
+
+00:02:26.160 --> 00:02:27.430 align:start position:0%
+so that the led will light when the pir
+detects<00:02:26.640><c> motion</c>
+
+00:02:27.430 --> 00:02:27.440 align:start position:0%
+detects motion
+ 
+
+00:02:27.440 --> 00:02:30.229 align:start position:0%
+detects motion
+we<00:02:27.599><c> are</c><00:02:27.760><c> only</c><00:02:28.160><c> using</c><00:02:28.480><c> the</c><00:02:28.640><c> arduino</c><00:02:29.280><c> board</c><00:02:30.000><c> for</c>
+
+00:02:30.229 --> 00:02:30.239 align:start position:0%
+we are only using the arduino board for
+ 
+
+00:02:30.239 --> 00:02:30.869 align:start position:0%
+we are only using the arduino board for
+power
+
+00:02:30.869 --> 00:02:30.879 align:start position:0%
+power
+ 
+
+00:02:30.879 --> 00:02:33.509 align:start position:0%
+power
+and<00:02:31.120><c> ground</c><00:02:32.480><c> so</c><00:02:32.640><c> we're</c><00:02:32.720><c> going</c><00:02:32.800><c> to</c><00:02:32.879><c> connect</c>
+
+00:02:33.509 --> 00:02:33.519 align:start position:0%
+and ground so we're going to connect
+ 
+
+00:02:33.519 --> 00:02:35.990 align:start position:0%
+and ground so we're going to connect
+power<00:02:33.920><c> and</c><00:02:34.840><c> ground</c>
+
+00:02:35.990 --> 00:02:36.000 align:start position:0%
+power and ground
+ 
+
+00:02:36.000 --> 00:02:39.110 align:start position:0%
+power and ground
+of<00:02:36.080><c> the</c><00:02:36.239><c> ground</c><00:02:36.800><c> here</c>
+
+00:02:39.110 --> 00:02:39.120 align:start position:0%
+ 
+ 
+
+00:02:39.120 --> 00:02:42.710 align:start position:0%
+ 
+to<00:02:39.360><c> the</c><00:02:39.599><c> pir</c><00:02:40.160><c> sensor</c><00:02:41.040><c> and</c><00:02:41.360><c> we</c><00:02:41.440><c> have</c><00:02:41.840><c> 5</c><00:02:42.160><c> volts</c>
+
+00:02:42.710 --> 00:02:42.720 align:start position:0%
+to the pir sensor and we have 5 volts
+ 
+
+00:02:42.720 --> 00:02:45.670 align:start position:0%
+to the pir sensor and we have 5 volts
+power<00:02:43.200><c> here</c><00:02:43.840><c> and</c><00:02:44.000><c> again</c><00:02:44.319><c> all</c><00:02:44.560><c> we're</c><00:02:44.959><c> using</c><00:02:45.519><c> the</c>
+
+00:02:45.670 --> 00:02:45.680 align:start position:0%
+power here and again all we're using the
+ 
+
+00:02:45.680 --> 00:02:47.270 align:start position:0%
+power here and again all we're using the
+arduino<00:02:46.319><c> board</c><00:02:46.640><c> for</c>
+
+00:02:47.270 --> 00:02:47.280 align:start position:0%
+arduino board for
+ 
+
+00:02:47.280 --> 00:02:49.270 align:start position:0%
+arduino board for
+is<00:02:47.440><c> to</c><00:02:47.519><c> get</c><00:02:47.680><c> the</c><00:02:47.840><c> power</c><00:02:48.160><c> to</c><00:02:48.319><c> it</c><00:02:48.800><c> so</c><00:02:48.959><c> the</c><00:02:49.120><c> only</c>
+
+00:02:49.270 --> 00:02:49.280 align:start position:0%
+is to get the power to it so the only
+ 
+
+00:02:49.280 --> 00:02:50.470 align:start position:0%
+is to get the power to it so the only
+thing<00:02:49.599><c> left</c>
+
+00:02:50.470 --> 00:02:50.480 align:start position:0%
+thing left
+ 
+
+00:02:50.480 --> 00:02:52.550 align:start position:0%
+thing left
+is<00:02:51.280><c> this</c><00:02:51.519><c> connection</c><00:02:52.000><c> right</c><00:02:52.160><c> here</c><00:02:52.319><c> in</c><00:02:52.480><c> the</c>
+
+00:02:52.550 --> 00:02:52.560 align:start position:0%
+is this connection right here in the
+ 
+
+00:02:52.560 --> 00:02:53.940 align:start position:0%
+is this connection right here in the
+middle<00:02:52.959><c> the</c><00:02:53.200><c> output</c>
+
+00:02:53.940 --> 00:02:53.950 align:start position:0%
+middle the output
+ 
+
+00:02:53.950 --> 00:02:55.350 align:start position:0%
+middle the output
+[Music]
+
+00:02:55.350 --> 00:02:55.360 align:start position:0%
+[Music]
+ 
+
+00:02:55.360 --> 00:02:58.300 align:start position:0%
+[Music]
+and<00:02:55.840><c> that</c><00:02:56.160><c> output</c>
+
+00:02:58.300 --> 00:02:58.310 align:start position:0%
+and that output
+ 
+
+00:02:58.310 --> 00:02:59.830 align:start position:0%
+and that output
+[Music]
+
+00:02:59.830 --> 00:02:59.840 align:start position:0%
+[Music]
+ 
+
+00:02:59.840 --> 00:03:03.509 align:start position:0%
+[Music]
+is<00:03:00.080><c> going</c><00:03:00.159><c> to</c><00:03:00.319><c> go</c><00:03:00.640><c> from</c>
+
+00:03:03.509 --> 00:03:03.519 align:start position:0%
+ 
+ 
+
+00:03:03.519 --> 00:03:05.490 align:start position:0%
+ 
+here<00:03:04.720><c> the</c><00:03:04.879><c> middle</c><00:03:05.200><c> pin</c>
+
+00:03:05.490 --> 00:03:05.500 align:start position:0%
+here the middle pin
+ 
+
+00:03:05.500 --> 00:03:08.149 align:start position:0%
+here the middle pin
+[Music]
+
+00:03:08.149 --> 00:03:08.159 align:start position:0%
+[Music]
+ 
+
+00:03:08.159 --> 00:03:10.020 align:start position:0%
+[Music]
+back<00:03:08.560><c> over</c><00:03:08.959><c> to</c>
+
+00:03:10.020 --> 00:03:10.030 align:start position:0%
+back over to
+ 
+
+00:03:10.030 --> 00:03:13.509 align:start position:0%
+back over to
+[Music]
+
+00:03:13.509 --> 00:03:13.519 align:start position:0%
+[Music]
+ 
+
+00:03:13.519 --> 00:03:16.830 align:start position:0%
+[Music]
+the<00:03:13.760><c> board</c><00:03:14.000><c> here</c><00:03:15.200><c> and</c><00:03:15.440><c> finally</c><00:03:15.920><c> i'll</c><00:03:16.159><c> put</c><00:03:16.400><c> the</c>
+
+00:03:16.830 --> 00:03:16.840 align:start position:0%
+the board here and finally i'll put the
+ 
+
+00:03:16.840 --> 00:03:18.550 align:start position:0%
+the board here and finally i'll put the
+little<00:03:17.760><c> plastic</c>
+
+00:03:18.550 --> 00:03:18.560 align:start position:0%
+little plastic
+ 
+
+00:03:18.560 --> 00:03:20.149 align:start position:0%
+little plastic
+i'll<00:03:18.640><c> put</c><00:03:18.879><c> the</c><00:03:18.959><c> little</c><00:03:19.200><c> plastic</c><00:03:19.599><c> cover</c><00:03:19.920><c> back</c>
+
+00:03:20.149 --> 00:03:20.159 align:start position:0%
+i'll put the little plastic cover back
+ 
+
+00:03:20.159 --> 00:03:21.910 align:start position:0%
+i'll put the little plastic cover back
+on
+
+00:03:21.910 --> 00:03:21.920 align:start position:0%
+on
+ 
+
+00:03:21.920 --> 00:03:24.630 align:start position:0%
+on
+and<00:03:22.640><c> you</c><00:03:22.720><c> can</c><00:03:22.879><c> see</c><00:03:23.040><c> our</c><00:03:23.280><c> led</c><00:03:23.840><c> has</c><00:03:24.000><c> already</c><00:03:24.400><c> lit</c>
+
+00:03:24.630 --> 00:03:24.640 align:start position:0%
+and you can see our led has already lit
+ 
+
+00:03:24.640 --> 00:03:25.110 align:start position:0%
+and you can see our led has already lit
+up
+
+00:03:25.110 --> 00:03:25.120 align:start position:0%
+up
+ 
+
+00:03:25.120 --> 00:03:29.030 align:start position:0%
+up
+let's<00:03:25.519><c> get</c><00:03:25.760><c> a</c><00:03:25.840><c> little</c><00:03:26.159><c> distance</c><00:03:26.640><c> from</c><00:03:26.959><c> it</c>
+
+00:03:29.030 --> 00:03:29.040 align:start position:0%
+let's get a little distance from it
+ 
+
+00:03:29.040 --> 00:03:31.110 align:start position:0%
+let's get a little distance from it
+and<00:03:29.280><c> see</c><00:03:29.440><c> how</c><00:03:29.599><c> it</c><00:03:29.680><c> works</c><00:03:30.480><c> okay</c><00:03:30.720><c> we</c><00:03:30.879><c> got</c><00:03:31.040><c> a</c>
+
+00:03:31.110 --> 00:03:31.120 align:start position:0%
+and see how it works okay we got a
+ 
+
+00:03:31.120 --> 00:03:32.070 align:start position:0%
+and see how it works okay we got a
+little<00:03:31.360><c> distance</c><00:03:31.760><c> from</c>
+
+00:03:32.070 --> 00:03:32.080 align:start position:0%
+little distance from
+ 
+
+00:03:32.080 --> 00:03:34.869 align:start position:0%
+little distance from
+it<00:03:32.480><c> i</c><00:03:32.720><c> am</c><00:03:32.959><c> zoomed</c><00:03:33.280><c> in</c><00:03:33.440><c> a</c><00:03:33.519><c> little</c><00:03:33.680><c> bit</c><00:03:34.480><c> and</c><00:03:34.720><c> we're</c>
+
+00:03:34.869 --> 00:03:34.879 align:start position:0%
+it i am zoomed in a little bit and we're
+ 
+
+00:03:34.879 --> 00:03:36.949 align:start position:0%
+it i am zoomed in a little bit and we're
+going<00:03:35.120><c> to</c><00:03:35.280><c> approach</c><00:03:35.760><c> it</c>
+
+00:03:36.949 --> 00:03:36.959 align:start position:0%
+going to approach it
+ 
+
+00:03:36.959 --> 00:03:39.270 align:start position:0%
+going to approach it
+and<00:03:37.120><c> you</c><00:03:37.280><c> can</c><00:03:37.440><c> see</c><00:03:37.599><c> it</c><00:03:37.760><c> already</c><00:03:38.000><c> lit</c><00:03:38.239><c> up</c><00:03:39.120><c> now</c>
+
+00:03:39.270 --> 00:03:39.280 align:start position:0%
+and you can see it already lit up now
+ 
+
+00:03:39.280 --> 00:03:40.470 align:start position:0%
+and you can see it already lit up now
+you're<00:03:39.440><c> going</c><00:03:39.519><c> to</c><00:03:39.599><c> have</c><00:03:39.760><c> to</c><00:03:39.840><c> play</c><00:03:40.080><c> around</c><00:03:40.319><c> with</c>
+
+00:03:40.470 --> 00:03:40.480 align:start position:0%
+you're going to have to play around with
+ 
+
+00:03:40.480 --> 00:03:42.390 align:start position:0%
+you're going to have to play around with
+the<00:03:40.560><c> sensitivity</c><00:03:41.280><c> and</c><00:03:41.440><c> timer</c><00:03:41.760><c> settings</c><00:03:42.159><c> for</c><00:03:42.319><c> a</c>
+
+00:03:42.390 --> 00:03:42.400 align:start position:0%
+the sensitivity and timer settings for a
+ 
+
+00:03:42.400 --> 00:03:43.030 align:start position:0%
+the sensitivity and timer settings for a
+while
+
+00:03:43.030 --> 00:03:43.040 align:start position:0%
+while
+ 
+
+00:03:43.040 --> 00:03:44.830 align:start position:0%
+while
+i'm<00:03:43.200><c> going</c><00:03:43.280><c> to</c><00:03:43.360><c> get</c><00:03:43.599><c> out</c><00:03:43.760><c> of</c><00:03:43.920><c> range</c><00:03:44.319><c> of</c><00:03:44.400><c> it</c>
+
+00:03:44.830 --> 00:03:44.840 align:start position:0%
+i'm going to get out of range of it
+ 
+
+00:03:44.840 --> 00:03:46.710 align:start position:0%
+i'm going to get out of range of it
+again<00:03:45.920><c> and</c>
+
+00:03:46.710 --> 00:03:46.720 align:start position:0%
+again and
+ 
+
+00:03:46.720 --> 00:03:48.949 align:start position:0%
+again and
+you<00:03:46.959><c> should</c><00:03:47.280><c> see</c><00:03:47.519><c> it</c><00:03:47.680><c> here</c><00:03:47.920><c> in</c><00:03:48.080><c> just</c><00:03:48.319><c> a</c><00:03:48.400><c> moment</c>
+
+00:03:48.949 --> 00:03:48.959 align:start position:0%
+you should see it here in just a moment
+ 
+
+00:03:48.959 --> 00:03:50.390 align:start position:0%
+you should see it here in just a moment
+it<00:03:49.200><c> should</c><00:03:49.519><c> go</c><00:03:49.760><c> out</c>
+
+00:03:50.390 --> 00:03:50.400 align:start position:0%
+it should go out
+ 
+
+00:03:50.400 --> 00:03:53.589 align:start position:0%
+it should go out
+there<00:03:50.720><c> it</c><00:03:50.799><c> went</c><00:03:51.040><c> out</c>
+
+00:03:53.589 --> 00:03:53.599 align:start position:0%
+ 
+ 
+
+00:03:53.599 --> 00:03:57.990 align:start position:0%
+ 
+see<00:03:53.840><c> as</c><00:03:54.000><c> i</c><00:03:54.080><c> approach</c><00:03:54.480><c> it</c><00:03:55.920><c> it</c><00:03:56.080><c> lights</c><00:03:56.400><c> up</c><00:03:56.560><c> again</c>
+
+00:03:57.990 --> 00:03:58.000 align:start position:0%
+see as i approach it it lights up again
+ 
+
+00:03:58.000 --> 00:04:00.229 align:start position:0%
+see as i approach it it lights up again
+let's<00:03:58.239><c> see</c><00:03:58.400><c> if</c><00:03:58.480><c> we</c><00:03:58.640><c> can</c><00:03:58.799><c> stay</c><00:03:59.120><c> still</c><00:03:59.840><c> here</c><00:04:00.159><c> and</c>
+
+00:04:00.229 --> 00:04:00.239 align:start position:0%
+let's see if we can stay still here and
+ 
+
+00:04:00.239 --> 00:04:03.270 align:start position:0%
+let's see if we can stay still here and
+make<00:04:00.480><c> it</c><00:04:00.560><c> go</c><00:04:00.799><c> out</c>
+
+00:04:03.270 --> 00:04:03.280 align:start position:0%
+ 
+ 
+
+00:04:03.280 --> 00:04:05.830 align:start position:0%
+ 
+it<00:04:03.519><c> does</c><00:04:03.840><c> take</c><00:04:04.080><c> the</c><00:04:04.239><c> timer</c><00:04:04.640><c> just</c><00:04:04.959><c> a</c><00:04:05.360><c> little</c><00:04:05.599><c> bit</c>
+
+00:04:05.830 --> 00:04:05.840 align:start position:0%
+it does take the timer just a little bit
+ 
+
+00:04:05.840 --> 00:04:06.470 align:start position:0%
+it does take the timer just a little bit
+to<00:04:06.000><c> reset</c>
+
+00:04:06.470 --> 00:04:06.480 align:start position:0%
+to reset
+ 
+
+00:04:06.480 --> 00:04:08.070 align:start position:0%
+to reset
+it<00:04:06.560><c> should</c><00:04:06.720><c> be</c><00:04:06.879><c> reset</c><00:04:07.280><c> now</c><00:04:07.519><c> and</c><00:04:07.599><c> it</c><00:04:07.680><c> comes</c><00:04:07.920><c> on</c>
+
+00:04:08.070 --> 00:04:08.080 align:start position:0%
+it should be reset now and it comes on
+ 
+
+00:04:08.080 --> 00:04:09.670 align:start position:0%
+it should be reset now and it comes on
+again
+
+00:04:09.670 --> 00:04:09.680 align:start position:0%
+again
+ 
+
+00:04:09.680 --> 00:04:12.070 align:start position:0%
+again
+if<00:04:09.920><c> you</c><00:04:10.239><c> are</c><00:04:10.480><c> using</c><00:04:10.879><c> a</c><00:04:11.120><c> microcontroller</c><00:04:12.000><c> you</c>
+
+00:04:12.070 --> 00:04:12.080 align:start position:0%
+if you are using a microcontroller you
+ 
+
+00:04:12.080 --> 00:04:14.390 align:start position:0%
+if you are using a microcontroller you
+can<00:04:12.239><c> test</c><00:04:12.560><c> the</c><00:04:12.720><c> output</c><00:04:13.040><c> of</c><00:04:13.120><c> the</c><00:04:13.200><c> pir</c>
+
+00:04:14.390 --> 00:04:14.400 align:start position:0%
+can test the output of the pir
+ 
+
+00:04:14.400 --> 00:04:17.110 align:start position:0%
+can test the output of the pir
+instead<00:04:14.879><c> of</c><00:04:15.040><c> using</c><00:04:15.360><c> it</c><00:04:15.439><c> to</c><00:04:15.599><c> power</c><00:04:15.840><c> an</c><00:04:16.000><c> led</c><00:04:16.959><c> we</c>
+
+00:04:17.110 --> 00:04:17.120 align:start position:0%
+instead of using it to power an led we
+ 
+
+00:04:17.120 --> 00:04:20.310 align:start position:0%
+instead of using it to power an led we
+will<00:04:17.280><c> be</c><00:04:17.519><c> doing</c><00:04:17.840><c> this</c><00:04:18.160><c> in</c><00:04:18.320><c> a</c><00:04:18.400><c> future</c><00:04:18.799><c> video</c>
+
+00:04:20.310 --> 00:04:20.320 align:start position:0%
+will be doing this in a future video
+ 
+
+00:04:20.320 --> 00:04:23.189 align:start position:0%
+will be doing this in a future video
+that<00:04:20.639><c> was</c><00:04:20.880><c> the</c><00:04:21.040><c> pir</c><00:04:21.680><c> sensor</c><00:04:22.479><c> in</c><00:04:22.639><c> just</c><00:04:22.880><c> a</c><00:04:22.960><c> couple</c>
+
+00:04:23.189 --> 00:04:23.199 align:start position:0%
+that was the pir sensor in just a couple
+ 
+
+00:04:23.199 --> 00:04:25.270 align:start position:0%
+that was the pir sensor in just a couple
+of<00:04:23.360><c> minutes</c><00:04:23.759><c> thanks</c><00:04:24.000><c> for</c><00:04:24.240><c> watching</c><00:04:24.720><c> and</c><00:04:24.960><c> don't</c>
+
+00:04:25.270 --> 00:04:25.280 align:start position:0%
+of minutes thanks for watching and don't
+ 
+
+00:04:25.280 --> 00:04:27.510 align:start position:0%
+of minutes thanks for watching and don't
+forget<00:04:25.759><c> to</c><00:04:26.000><c> subscribe</c><00:04:26.560><c> to</c><00:04:26.720><c> the</c><00:04:26.800><c> channel</c>
+
+00:04:27.510 --> 00:04:27.520 align:start position:0%
+forget to subscribe to the channel
+ 
+
+00:04:27.520 --> 00:04:33.790 align:start position:0%
+forget to subscribe to the channel
+if<00:04:27.600><c> you</c><00:04:27.759><c> want</c><00:04:28.000><c> to</c><00:04:28.160><c> see</c><00:04:28.400><c> more</c><00:04:28.639><c> content</c><00:04:29.120><c> like</c>
+
+00:04:33.790 --> 00:04:33.800 align:start position:0%
+ 
+ 
+
+00:04:33.800 --> 00:04:36.800 align:start position:0%
+ 
+this
+
