@@ -42,6 +42,25 @@ git log --oneline -5
 
 If the bootstrap fails (PAT expired, file moved, etc.), tell Lonnie what's wrong and ask for a fresh PAT — don't silently degrade.
 
+**4. Sandbox filesystem limitation — build and git must run from /tmp.**
+
+The bash sandbox cannot write to the workspace's `.git/` directory or `node_modules/.vite/deps/`. Running `npm run build` or any `git` command directly in the mounted workspace folder will fail with permission errors. The workaround is to copy the project to `/tmp` first, then do all build and git operations there:
+
+```bash
+cp -r "/sessions/<session-id>/mnt/Blog project" /tmp/blog-build
+cd /tmp/blog-build
+
+# Build to verify
+npm run build
+
+# Stage, commit, and push
+git add <files>
+git commit -m "..."
+git push origin main
+```
+
+The Write/Edit file tools bypass this restriction and can write directly to the workspace folder — use them for creating and editing post files. Only `npm run build` and `git` commands need the /tmp workaround.
+
 After bootstrap, you can pull a video transcript, draft a post, commit, and push — all from the sandbox, no GUI needed.
 
 ## What this project is
@@ -130,6 +149,18 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
      --output "src/assets/posts/{slug}/thumbnail" \
      "https://www.youtube.com/watch?v={VIDEO_ID}"
 
+   NOTE: --convert-thumbnails jpg does not work reliably in the sandbox (ffmpeg
+   missing). yt-dlp will download a .webp file regardless. Convert it manually
+   with PIL immediately after, then move on — the .webp will be left behind but
+   is covered by .gitignore so it won't pollute the repo:
+
+   python3 -c "
+   from PIL import Image
+   img = Image.open('src/assets/posts/{slug}/thumbnail.webp')
+   img.convert('RGB').save('src/assets/posts/{slug}/thumbnail.jpg', 'JPEG', quality=90)
+   print('Converted')
+   "
+
 4. Clean the .vtt transcript (Python snippet that strips inline timing tags
    and dedupes lines is in the MG995 working notes)
 
@@ -140,9 +171,14 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
 
 6. Draft the post in src/content/blog/{slug}.md following the structure above.
 
-7. Build to verify: cd to repo, npm run build (must pass cleanly).
+7. Build to verify — use the /tmp copy (see sandbox limitation note in bootstrap):
+   cp -r "/sessions/<session-id>/mnt/Blog project" /tmp/blog-build
+   cd /tmp/blog-build && npm run build   # must pass cleanly
 
-8. Commit and push (see SETUP.md "Auth & push workflow").
+8. Commit and push from /tmp/blog-build (same sandbox limitation):
+   git add <new files>
+   git commit -m "..."
+   git push origin main
 ```
 
 ## Conventions and small things
@@ -159,6 +195,18 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
 - **AI-generated photo placeholders** (one round, then removed) — felt off, undermined authenticity.
 - **Image placeholder divs in markdown** (CSS class `.img-placeholder` in `global.css`) — kept in the codebase as an unused utility in case we want it again, but not used in any current post.
 - **GitHub web file uploads** — works but tedious for ongoing posts; GitHub Desktop or CLI push is the path.
+
+## Picking candidates from the queue
+
+Order doesn't matter — the goal is to get all 110+ videos done, not to do them in any particular sequence. Just pick from the unpublished list and work through them.
+
+A few things that affect which videos make good standalone posts:
+
+**Multi-part series** (e.g., "How to build an Arduino Lite Brite Clock — Part 3 of 6") make awkward standalone posts because readers land mid-project without context. Options: write all parts in a single session so you can batch them, or consolidate the series into one overview post that links to the individual videos. Don't write just one episode in a series and leave the rest for later — it reads oddly.
+
+**Obvious non-technical outliers** — a handful of videos slipped past the candidate filter that aren't really tutorials (e.g., a floral pick machine demo, a camera-leveling tip). If a video clearly doesn't fit the Arduino/electronics/DIY scope of the blog, skip it and note it for Lonnie to remove from `data/technical-candidates.tsv` manually.
+
+**Everything else** — just pick and go. Longer videos generally yield richer transcripts and more content to work with, but a tight 5-minute demo can make a clean short post too.
 
 ## What's reusable / what's the manifest
 

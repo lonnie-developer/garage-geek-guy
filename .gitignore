@@ -20,6 +20,11 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# Thumbnail originals — yt-dlp downloads webp even when jpg is requested;
+# PIL converts them to .jpg for the repo. The .webp files can't be deleted
+# from the sandbox due to filesystem permissions, so just ignore them.
+*.webp
+
 # jetbrains setting folder
 .idea/
 
