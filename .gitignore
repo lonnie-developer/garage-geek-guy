@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# secrets and credentials — defensive (these should never be in the project anyway)
+.git-credentials
+*.pat
+*.token
+.netrc
+secrets/
