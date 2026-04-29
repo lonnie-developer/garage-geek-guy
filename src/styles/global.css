@@ -234,3 +234,30 @@ hr {
 	font-size: 0.8em;
 	border: 1px solid var(--border);
 }
+
+/* Image placeholders — replace each one with a real <img> when supplying photos */
+.img-placeholder {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 2.5em 1.5em;
+	margin: 1.5em 0;
+	background: var(--surface);
+	border: 2px dashed var(--accent);
+	border-radius: 10px;
+	color: var(--text-muted);
+	font-size: 0.95em;
+	line-height: 1.5;
+}
+.img-placeholder::before {
+	content: "📷  IMAGE PLACEHOLDER";
+	display: block;
+	font-weight: 700;
+	color: var(--accent);
+	letter-spacing: 0.05em;
+	font-size: 0.75em;
+	margin-bottom: 0.5em;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
