@@ -2,6 +2,48 @@
 
 This file is for Claude (and any AI assistant) working in this repo. It captures the conventions and judgments that aren't obvious from reading the code. For the broader project setup, see [SETUP.md](./SETUP.md).
 
+## Session bootstrap (first interaction in a fresh Cowork session)
+
+Do these once at the start of a new session, before doing real work. They're cheap and one-shot.
+
+**1. Install yt-dlp** (used for pulling video metadata, transcripts, and thumbnails — needed for any new post):
+
+```bash
+pip install --quiet --break-system-packages --no-warn-script-location yt-dlp
+# yt-dlp will be at /sessions/<session-id>/.local/bin/yt-dlp
+# Either prepend that to PATH or invoke with the full path
+```
+
+**2. Configure git auth using the persisted PAT.** The token lives in the user's persistent Claude memory store. Read it with the Read tool from the path indicated in `MEMORY.md` (the entry titled "GitHub PAT for garage-geek-guy"), then:
+
+```bash
+git config --global user.name "Lonnie Honeycutt"
+git config --global user.email "lonnie.honeycutt@gmail.com"
+git config --global credential.helper store
+python3 -c "
+import os
+home = os.path.expanduser('~')
+path = os.path.join(home, '.git-credentials')
+token = '<TOKEN_FROM_MEMORY_FILE>'
+with open(path, 'w') as f:
+    f.write(f'https://lonnie-developer:{token}@github.com\n')
+os.chmod(path, 0o600)
+"
+# Verify with: cd to repo, git fetch origin
+```
+
+**3. Verify the sandbox understands the project.** Quick sanity check:
+
+```bash
+cd "/sessions/<session-id>/mnt/Blog project"
+git status
+git log --oneline -5
+```
+
+If the bootstrap fails (PAT expired, file moved, etc.), tell Lonnie what's wrong and ask for a fresh PAT — don't silently degrade.
+
+After bootstrap, you can pull a video transcript, draft a post, commit, and push — all from the sandbox, no GUI needed.
+
 ## What this project is
 
 The blog is the written companion to the [Garage Geek Guy YouTube channel](https://www.youtube.com/@garagegeekguy) — Lonnie Honeycutt's channel covering hands-on electronics, Arduino, microcontrollers, and DIY projects from the workshop. Each post is the written form of a video: video embedded at the top, then a polished tutorial-style writeup that adds context, links, and historical backstory the video doesn't cover.
