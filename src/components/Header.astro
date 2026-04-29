@@ -278,10 +278,22 @@ import HeaderLink from './HeaderLink.astro';
 				link.href = '/pagefind/pagefind-ui.css';
 				document.head.appendChild(link);
 
-				// Load Pagefind UI JS and initialise
-				import('/pagefind/pagefind-ui.js').then(function (mod) {
-					const PagefindUI = mod.PagefindUI;
-					new PagefindUI({
+				// Load Pagefind UI JS as a regular script — pagefind-ui.js is an
+				// IIFE that attaches `window.PagefindUI`, not an ES module, so a
+				// dynamic import() returns an empty namespace and fails to construct.
+				const showFallback = function () {
+					document.getElementById('search').innerHTML =
+						'<p style="color:var(--text-muted);padding:1em 0;font-size:0.9em">Search index not available — run <code>npm run build</code> to generate it.</p>';
+				};
+				const script = document.createElement('script');
+				script.src = '/pagefind/pagefind-ui.js';
+				script.async = true;
+				script.onload = function () {
+					if (typeof window.PagefindUI !== 'function') {
+						showFallback();
+						return;
+					}
+					new window.PagefindUI({
 						element: '#search',
 						showSubResults: false,
 						resetStyles: false,
@@ -291,10 +303,9 @@ import HeaderLink from './HeaderLink.astro';
 						const input = document.querySelector('#search input[type=text]');
 						if (input) input.focus();
 					}, 80);
-				}).catch(function () {
-					document.getElementById('search').innerHTML =
-						'<p style="color:var(--text-muted);padding:1em 0;font-size:0.9em">Search index not available — run <code>npm run build</code> to generate it.</p>';
-				});
+				};
+				script.onerror = showFallback;
+				document.head.appendChild(script);
 			} else {
 				setTimeout(function () {
 					const input = document.querySelector('#search input[type=text]');
