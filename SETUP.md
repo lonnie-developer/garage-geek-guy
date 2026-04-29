@@ -158,16 +158,19 @@ For batch work, Claude pushes directly from the sandbox using a fine-grained Per
 
 - Scoped to **only** the `garage-geek-guy` repository
 - Permissions: **Contents: Read and write** + **Metadata: Read** (auto)
-- Stored in `~/.git-credentials` *inside the sandbox* (not on the Mac)
-- Set with `git config --global credential.helper store`
+- 90-day expiration; rotate before it lapses
+- Working credential at `~/.git-credentials` inside the sandbox (mode 0600), set with `git config --global credential.helper store`
+- Persistent backup at `~/Library/Application Support/Claude/.../memory/github_pat_garage_geek_guy.md` on Lonnie's Mac (not in the project repo, not committed anywhere)
 - Revocable from [github.com/settings/personal-access-tokens](https://github.com/settings/personal-access-tokens) at any time
 
-If the sandbox's `~/.git-credentials` file doesn't persist between Cowork sessions, the user re-pastes the PAT once at the start of a new session and Claude reconfigures it.
+The persistent backup is the source of truth. If a new Cowork session starts with no credentials configured in the sandbox, Claude reads the memory-stored token and re-bootstraps `~/.git-credentials` automatically — no need to re-paste the PAT.
+
+The project `.gitignore` defensively excludes `.git-credentials`, `*.pat`, `*.token`, `.netrc`, and `secrets/` as a safety net so credential files can never be accidentally committed.
 
 To rotate the token:
-1. Generate a new fine-grained PAT at the URL above with the same scope.
+1. Generate a new fine-grained PAT at the URL above with the same scope (only `garage-geek-guy`, Contents:read+write).
 2. Paste it into chat with Claude.
-3. Claude updates `~/.git-credentials` in the sandbox.
+3. Claude updates both the sandbox credentials file *and* the persistent backup memory file.
 4. Revoke the old token from GitHub Settings.
 
 ## Local development (rare, but documented)
