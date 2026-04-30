@@ -66,27 +66,13 @@ Blog project/
 
 The steady-state workflow for a transcript-derived post:
 
-1. **Pick a video.** From the technical-content manifest (~115 candidates), select one to write up.
-2. **Pull metadata + transcript.** Using `yt-dlp` from the sandbox:
-   ```
-   yt-dlp --skip-download --write-auto-subs --sub-lang en --sub-format vtt \
-     --print "%(upload_date)s %(title)s" --output "{video_id}" \
-     "https://www.youtube.com/watch?v={VIDEO_ID}"
-   ```
-3. **Pull the YouTube thumbnail** for the OG/social card:
-   ```
-   yt-dlp --skip-download --write-thumbnail --convert-thumbnails jpg \
-     --output "src/assets/posts/{slug}/thumbnail" \
-     "https://www.youtube.com/watch?v={VIDEO_ID}"
-   ```
+1. **Pick a video.** From the technical-content manifest (~115 candidates), select one to write up. *(Note: as of April 2026 the back-catalog is essentially done; see `CLAUDE.md` § "Picking candidates from the queue.")*
+2. **Pull metadata + transcript** with `yt-dlp` from the sandbox. The exact invocation requires the `--js-runtimes "node:..."` flag (without it, subtitles fail silently) — see `CLAUDE.md` § "Workflow for a new transcript-derived post" for the working command. Don't re-derive it from yt-dlp's docs; the sandbox-specific quirks are worked out there.
+3. **Pull the YouTube thumbnail** the same way (see `CLAUDE.md`). The thumbnail downloads as `.webp` because ffmpeg isn't in the sandbox; `CLAUDE.md` shows the PIL one-liner that converts it.
 4. **Research backstory.** Web-search the relevant components, history, related techniques, canonical references (datasheets, library docs, foundational forum threads).
 5. **Draft the post** at `src/content/blog/{slug}.md` with the frontmatter described below. Match the voice notes in `CLAUDE.md`.
-6. **Verify locally:**
-   ```
-   npm install   # only the first time, or after dependency changes
-   npm run build
-   ```
-7. **Commit and push** (see "Auth & push workflow" below).
+6. **Verify with a build.** Build inside a fresh `/tmp` clone, not the workspace — the sandbox can't replace cached files in the workspace's `node_modules`. See `CLAUDE.md` § "Sandbox filesystem limitation."
+7. **Commit and push** from the same `/tmp` clone (see "Auth & push workflow" below).
 8. **Cloudflare auto-deploys** in ~60 seconds. Verify at the live URL.
 
 ## Post frontmatter schema
@@ -97,7 +83,11 @@ Defined in `src/content.config.ts`. Each `.md` file in `src/content/blog/` must 
 ---
 title: 'String'                  # Required. Used for <h1>, <title>, OG card, post listings
 description: 'String'            # Required. Used for OG description and post-card excerpt
-pubDate: 'August 19 2012'        # Required. Backdate to the original YouTube upload
+pubDate: 'August 19 2012'        # Required. Backdate to the original YouTube upload.
+                                 # Canonical format: 'Month DD YYYY' in single quotes,
+                                 # space-separated, no leading zero on the day.
+                                 # The schema uses z.coerce.date() so other formats parse,
+                                 # but stick to this one for consistency.
 youtubeId: 'cnOKG0fvZ4w'         # Optional. 11-char video ID — embeds video at top of post
 heroImage: '../../assets/posts/{slug}/thumbnail.jpg'  # Optional. Used for OG/social card image
 tags: ['arduino', 'servo']       # Optional. Renders as #tag pills under the byline
@@ -139,9 +129,9 @@ Auto-deploys are enabled. Every push to `main` triggers a fresh build.
 
 ## Auth & push workflow
 
-**Two paths exist, both work:**
+**Two paths exist.** Claude in Cowork mode uses Option B (PAT-based CLI). Option A is for Lonnie working manually at the keyboard. AI agents can ignore Option A.
 
-### Option A — GitHub Desktop (GUI)
+### Option A — GitHub Desktop (GUI, for Lonnie's manual work)
 
 GitHub Desktop is installed and signed in as `lonnie-developer`. Workflow:
 
@@ -152,7 +142,7 @@ GitHub Desktop is installed and signed in as `lonnie-developer`. Workflow:
 
 This is the "no-token-needed" path — GitHub Desktop handles auth via macOS Keychain.
 
-### Option B — Command-line push from the sandbox (Claude-driven)
+### Option B — Command-line push from the sandbox (Claude in Cowork)
 
 For batch work, Claude pushes directly from the sandbox using a fine-grained Personal Access Token. The token is:
 
@@ -191,7 +181,11 @@ These commands run in Terminal. The point of the rest of the setup is that you d
 
 **Build fails on Cloudflare but passes locally** — usually a Node version mismatch. The repo's `package.json` declares `engines.node >= 22.12.0`. If Cloudflare's default has drifted, set `NODE_VERSION=22` as a build environment variable in Cloudflare project settings.
 
-**A post's pubDate doesn't sort correctly** — make sure the date string is parseable (`August 19 2012` works; `2012-8-19` works; `08/19/2012` is risky). The schema uses `z.coerce.date()` which is forgiving but not magical.
+**A post's pubDate doesn't sort correctly** — use the canonical format `'Month DD YYYY'` (e.g. `'August 19 2012'`). The schema uses `z.coerce.date()` and accepts other shapes, but mixed formats across posts have caused sort surprises in the past. Stick to one format.
+
+**`npm run build` fails with `EPERM ... unlink ...`** — you're running it inside the workspace folder. The sandbox can't delete files there, and Vite needs to refresh its cache. Build inside a fresh `/tmp` clone instead. See `CLAUDE.md` § "Sandbox filesystem limitation."
+
+**Pagefind reports "Indexed 0 pages" or unexpectedly few pages** — the `<article data-pagefind-body>` wrapper in `src/layouts/BlogPost.astro` was moved or removed. Pagefind only indexes content inside that wrapper. Healthy index for this site is around 107 pages, 6800+ words.
 
 **A YouTube embed fails to load on the live site** — confirm the `youtubeId` is the 11-char ID from the URL (the `v=` parameter), not the full URL or the channel handle.
 
@@ -218,5 +212,4 @@ These commands run in Terminal. The point of the rest of the setup is that you d
 - Replace the default Astro favicon with a GGG-branded one
 - Replace `blog-placeholder-1.jpg` (the generic OG fallback) with a GGG-branded fallback graphic
 - Add tag pages (`/tags/arduino` etc.) listing all posts with that tag
-- Add a search box on the blog index
 - Newsletter signup integration (Buttondown? Listmonk? — TBD)

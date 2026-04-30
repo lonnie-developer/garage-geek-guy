@@ -100,6 +100,14 @@ const watchUrl = youtubeId
 	<body>
 		<Header />
 		<main>
+			{/*
+				data-pagefind-body is intentionally on <article> (not on the inner <div class="prose">)
+				so Pagefind indexes the post title (<h1>), tags, and the body slot together. Moving it
+				inward would shrink the index and remove titles/tags from search hits. data-pagefind-meta
+				exposes the title as a structured meta field so it surfaces clearly in result rows.
+				Healthy index for this site is ~107 pages, ~6800 words — see CLAUDE.md if a build
+				reports far less.
+			*/}
 			<article data-pagefind-body data-pagefind-meta={`title:${title}`}>
 				{youtubeId ? (
 					<div class="video-wrap">

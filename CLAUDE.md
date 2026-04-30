@@ -6,19 +6,29 @@ This file is for Claude (and any AI assistant) working in this repo. It captures
 
 Do these once at the start of a new session, before doing real work. They're cheap and one-shot.
 
-**1. Install yt-dlp** (used for pulling video metadata, transcripts, and thumbnails — needed for any new post):
+**0. Get your session ID and set up paths.** Every bash call below uses absolute paths to `/sessions/<your-session-id>/...`. Each bash call is independent (no env carryover), so put `SESSION_ID` and `BUILD_DIR` definitions at the top of every multi-step bash block, like this:
+
+```bash
+SESSION_ID=$(pwd | awk -F/ '{print $3}')   # current session is the third path component of pwd
+echo "SESSION_ID=$SESSION_ID"
+# Use $SESSION_ID anywhere you'd otherwise hard-code "kind-cool-hamilton" or similar
+```
+
+If you find yourself typing the literal string `<session-id>` into a path, you forgot this step.
+
+**1. Install yt-dlp and Pillow** (used for pulling video metadata, transcripts, and thumbnails — needed for any new post). Idempotent; safe to re-run if you're not sure of state.
 
 ```bash
 pip install --quiet --break-system-packages --no-warn-script-location yt-dlp Pillow
-# yt-dlp will be at /sessions/<session-id>/.local/bin/yt-dlp
-# Either prepend that to PATH or invoke with the full path
+# yt-dlp lands at /sessions/$SESSION_ID/.local/bin/yt-dlp — invoke with the full path
 ```
 
-**yt-dlp JS runtime fix (important — required for subtitle download):** The sandbox does not have Deno installed, and yt-dlp ≥ 2025 requires a JS runtime for YouTube extraction. Without it, `--write-auto-subs` silently produces no VTT files. The fix is to pass the `node` runtime explicitly on every yt-dlp call that fetches subtitles or metadata:
+**yt-dlp JS runtime fix (required for subtitle download).** The sandbox has no Deno; yt-dlp ≥ 2025 requires a JS runtime to extract YouTube data. Without it, `--write-auto-subs` silently produces no VTT files. Pass the `node` runtime explicitly on every yt-dlp call:
 
 ```bash
-NODE=$(which node)   # node is at /usr/bin/node in the sandbox
-YTDLP="/sessions/<session-id>/.local/bin/yt-dlp"
+SESSION_ID=$(pwd | awk -F/ '{print $3}')
+NODE=$(which node)                                       # /usr/bin/node
+YTDLP="/sessions/$SESSION_ID/.local/bin/yt-dlp"
 
 $YTDLP --js-runtimes "node:$NODE" --skip-download --write-auto-subs \
   --sub-lang en --sub-format vtt \
@@ -26,73 +36,68 @@ $YTDLP --js-runtimes "node:$NODE" --skip-download --write-auto-subs \
   "https://www.youtube.com/watch?v={VIDEO_ID}"
 ```
 
-**If yt-dlp fails to produce VTT files, stop and check with Lonnie — do not proceed to write posts without transcripts.** The `--js-runtimes "node:..."` flag must appear on every invocation that downloads subtitles. The warning `No supported JavaScript runtime could be found` means the flag was omitted or incorrectly formatted.
+The `NODE`, `YTDLP`, and `SESSION_ID` definitions and the call must run **in a single bash invocation** — variables don't carry across calls.
 
-**2. Configure git auth using the persisted PAT.** The token lives in the user's persistent Claude memory store. Read it with the Read tool from the path indicated in `MEMORY.md` (the entry titled "GitHub PAT for garage-geek-guy"), then:
+**If yt-dlp fails to produce VTT files, stop and check with Lonnie — do not proceed to write posts without transcripts.** The warning `No supported JavaScript runtime could be found` means the `--js-runtimes` flag was omitted or formatted wrong.
+
+**2. Configure git auth using the persisted PAT.** The token is stored at the path linked from `MEMORY.md` under the entry titled "GitHub PAT for garage-geek-guy". `MEMORY.md` is loaded into your context automatically, so use the Read tool on the linked file (a markdown file in the same memory directory) to get the token. Then in bash:
 
 ```bash
+TOKEN="<paste-token-from-memory-file>"
 git config --global user.name "Lonnie Honeycutt"
 git config --global user.email "lonnie.honeycutt@gmail.com"
 git config --global credential.helper store
 python3 -c "
 import os
-home = os.path.expanduser('~')
-path = os.path.join(home, '.git-credentials')
-token = '<TOKEN_FROM_MEMORY_FILE>'
+path = os.path.expanduser('~/.git-credentials')
 with open(path, 'w') as f:
-    f.write(f'https://lonnie-developer:{token}@github.com\n')
+    f.write('https://lonnie-developer:$TOKEN@github.com\n')
 os.chmod(path, 0o600)
 "
-# Verify with: cd to repo, git fetch origin
+# Verify by trying a fetch from a fresh clone (see step 3)
 ```
 
-**3. Sync with remote and verify the project state.**
+If the bootstrap fails (PAT expired, memory file moved, fetch returns 401), tell Lonnie what's wrong and ask for a fresh PAT — don't silently degrade.
 
-**Critical:** The workspace folder's `.git` directory is always behind the remote. Git operations happen from `/tmp`, so the workspace's local git state is never updated after a push. **Do not run `git status` or `git log` directly in the workspace folder** — the output is misleading and will make it look like already-committed posts are untracked.
+**3. Get a fresh checkout in `/tmp` and verify the project state.**
 
-Instead, copy to `/tmp` first and pull from remote before checking anything:
+The workspace's local `.git` is **stale** — it lags origin/main because pushes happen from `/tmp` clones, and the sandbox can't keep the workspace's git state in sync. So `git status` in the workspace will show "your branch is behind by N commits" and report phantom modifications on files that were already committed and pushed. That's an artifact of the workspace `.git` being stale, not a real diff. **Don't trust the workspace's `git status` to decide what needs committing.**
+
+Get an authoritative view by cloning fresh from origin into `/tmp`. Use a timestamped path because `/tmp` accumulates leftover dirs across sandbox sessions, and old dirs owned by `nobody:nogroup` can't be removed:
 
 ```bash
-cp -r "/sessions/<session-id>/mnt/Blog project" /tmp/blog-build
-cd /tmp/blog-build
-git pull origin main          # sync with remote — this is the source of truth
-git log --oneline -5          # now reflects what's actually live
-python3 scripts/queue-status.py  # use this to see what's published vs. remaining
+BUILD_DIR=/tmp/blog-build-$(date +%s)
+git clone --quiet https://github.com/lonnie-developer/garage-geek-guy.git "$BUILD_DIR"
+cd "$BUILD_DIR"
+git log --oneline -5                # what's actually live
+python3 scripts/queue-status.py     # published vs. remaining
+echo "$BUILD_DIR" > /tmp/builddir.txt   # remember the path for later bash calls
 ```
 
-After the pull, anything showing as untracked in the workspace that is **absent** from `/tmp/blog-build` after the pull has not been committed yet. Anything already in `/tmp/blog-build` after the pull is already live — don't re-commit it.
+Anything in `$BUILD_DIR` after the clone is already live; don't re-commit it. To check whether an unstaged-looking workspace file is actually a new change, compare against `$BUILD_DIR/<same-path>`.
 
-**Never use the workspace's `git status` to decide what needs committing.** Use `queue-status.py` output and the `/tmp/blog-build` git log instead.
+**4. Sandbox filesystem limitation — what works where.**
 
-If the bootstrap fails (PAT expired, file moved, etc.), tell Lonnie what's wrong and ask for a fresh PAT — don't silently degrade.
+The bash sandbox can **read** and **write** files anywhere in the workspace. What it cannot do is **`unlink`** (delete) any file it sees there, even files it just created. Two consequences:
 
-**4. Sandbox filesystem limitation — build and git must run from /tmp.**
+- `npm run build` in the workspace fails. Vite tries to delete `node_modules/.vite/deps/_metadata.json` to refresh its dependency cache — `EPERM: operation not permitted, unlink`. Pagefind also wants to clear out and rewrite `dist/pagefind/`. Build only in `$BUILD_DIR` (a `/tmp` clone), where the sandbox owns the filesystem.
+- `cp -r "<workspace>" /tmp/...` is unreliable. The `.git/objects/*` files hit "Resource deadlock avoided" on the macOS-bridged filesystem and the copy aborts mid-tree. **Use `git clone` from origin (step 3), not `cp -r`.**
 
-The bash sandbox cannot write to the workspace's `.git/` directory or `node_modules/.vite/deps/`. Running `npm run build` or any `git` command directly in the mounted workspace folder will fail with permission errors. The workaround is to copy the project to `/tmp` first, then do all build and git operations there:
+`git` *commands* run fine in the workspace (`git status`, `git fetch`, `git pull`). They just operate on the stale local `.git` (see step 3). Use them for read-only inspection only; never push or commit from the workspace.
 
-```bash
-cp -r "/sessions/<session-id>/mnt/Blog project" /tmp/blog-build
-cd /tmp/blog-build
-git pull origin main   # always pull before adding new work
+The Write/Edit file tools take a different path — they go through the macOS host, not the bash sandbox — so they CAN edit and create files in the workspace, including overwriting existing ones. Use them for editing posts and components. They cannot delete files either.
 
-# Build to verify
-npm run build
+**If you need to delete a workspace file** (cleanup, removing cruft) and `rm` returns "Operation not permitted", request delete permission via the `mcp__cowork__allow_cowork_file_delete` tool. The sandbox bash CAN run `rm` once permission is granted.
 
-# Stage, commit, and push
-git add <files>
-git commit -m "..."
-git push origin main
-```
-
-The Write/Edit file tools bypass this restriction and can write directly to the workspace folder — use them for creating and editing post files. Only `npm run build` and `git` commands need the /tmp workaround.
-
-After bootstrap, you can pull a video transcript, draft a post, commit, and push — all from the sandbox, no GUI needed.
+After bootstrap, the steady-state for any change is: edit files in the workspace via Write/Edit → `cd $BUILD_DIR && cp -r workspace-changed-files . && npm run build && git add ... && git commit && git push`. (Or, in practice, edit in `$BUILD_DIR` directly and let the workspace catch up on its own next session — only the GitHub remote is the source of truth.)
 
 ## What this project is
 
 The blog is the written companion to the [Garage Geek Guy YouTube channel](https://www.youtube.com/@garagegeekguy) — Lonnie Honeycutt's channel covering hands-on electronics, Arduino, microcontrollers, and DIY projects from the workshop. Each post is the written form of a video: video embedded at the top, then a polished tutorial-style writeup that adds context, links, and historical backstory the video doesn't cover.
 
-The goal is to convert the channel's ~115 technical videos into well-researched blog posts, working backward through the catalog. New videos get a post within a few days of upload.
+The goal is to convert the channel's ~115 technical videos into well-researched blog posts. New videos get a post within a few days of upload.
+
+**Project status as of 2026-04-29:** the back-catalog conversion is functionally complete. `queue-status.py` reports a small number of remaining "candidates," but on inspection those are filter false positives (TV commercials, sports-card shipping, etc.) — see "Picking candidates from the queue" below. Day-to-day work going forward is one new post per new video, not catch-up.
 
 ## Voice — the most important thing to get right
 
@@ -161,9 +166,10 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
    - `data/videos.tsv` — full channel catalog if the candidate filter missed something
    Run `python3 scripts/queue-status.py` to see how many are left and what's next.
 
-2. Pull metadata + transcript with yt-dlp:
+2. Pull metadata + transcript with yt-dlp (single bash call — variables don't carry across calls):
+   SESSION_ID=$(pwd | awk -F/ '{print $3}')
    NODE=$(which node)
-   YTDLP="/sessions/<session-id>/.local/bin/yt-dlp"
+   YTDLP="/sessions/$SESSION_ID/.local/bin/yt-dlp"
    $YTDLP --js-runtimes "node:$NODE" \
      --skip-download --write-auto-subs --sub-lang en --sub-format vtt \
      --print "ID: %(id)s" --print "TITLE: %(title)s" --print "UPLOAD: %(upload_date)s" \
@@ -174,7 +180,10 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
    # The --js-runtimes flag is required or subtitles will silently fail to download.
    # Verify: ls /tmp/{slug}.en.vtt — if missing, stop and check with Lonnie.
 
-3. Pull thumbnail:
+3. Pull thumbnail (same single-call rule):
+   SESSION_ID=$(pwd | awk -F/ '{print $3}')
+   NODE=$(which node)
+   YTDLP="/sessions/$SESSION_ID/.local/bin/yt-dlp"
    $YTDLP --js-runtimes "node:$NODE" \
      --skip-download --write-thumbnail --convert-thumbnails jpg \
      --output "src/assets/posts/{slug}/thumbnail" \
@@ -202,15 +211,28 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
 
 6. Draft the post in src/content/blog/{slug}.md following the structure above.
 
-7. Build to verify — use the /tmp copy (see sandbox limitation note in bootstrap):
-   cp -r "/sessions/<session-id>/mnt/Blog project" /tmp/blog-build
-   cd /tmp/blog-build && npm run build   # must pass cleanly
+7. Build to verify — clone fresh from origin (see bootstrap step 3):
+   BUILD_DIR=/tmp/blog-build-$(date +%s)
+   git clone --quiet https://github.com/lonnie-developer/garage-geek-guy.git "$BUILD_DIR"
+   cd "$BUILD_DIR"
+   # Copy your new/changed files into BUILD_DIR (the workspace edits aren't in
+   # this fresh clone yet). For a single new post: just commit the new file
+   # straight into BUILD_DIR via git, since the workspace and BUILD_DIR are
+   # the same repo at HEAD.
+   npm install     # only if not already installed in this BUILD_DIR
+   npm run build   # must pass cleanly — see "If the build fails" below
 
-8. Commit and push from /tmp/blog-build (same sandbox limitation):
+8. Commit and push from BUILD_DIR:
+   cd "$BUILD_DIR"
    git add <new files>
    git commit -m "..."
    git push origin main
 ```
+
+**If the build fails:**
+- `EPERM ... unlink ...node_modules/.vite/...` — you're building inside the workspace, not in `$BUILD_DIR`. Re-clone into a fresh `/tmp` path.
+- `Pagefind: Indexed 0 pages` — the `<article data-pagefind-body>` wrapper in `src/layouts/BlogPost.astro` got moved or removed. Restore it. Healthy index for this site is "Indexed 107 pages, 6800+ words" as of this writing — if your number is way under that, something dropped out.
+- Generic Astro error — read it, don't push, ping Lonnie if you can't resolve it. Don't commit broken posts.
 
 ## Conventions and small things
 
@@ -225,7 +247,7 @@ tags: ['arduino', 'servo', 'tutorial']      # 3-7 lowercase, hyphenated tags
 
 The blog uses [Pagefind](https://pagefind.app/) for client-side full-text search. A magnifying glass icon in the sticky header opens a modal search overlay. The `/` keyboard shortcut also opens it.
 
-**How it works:** `npm run build` runs `astro build` followed by `pagefind --site dist`. Pagefind crawls the generated HTML and writes a binary search index into `dist/pagefind/`. At runtime, the Header loads `/pagefind/pagefind-ui.js` and `/pagefind/pagefind-ui.css` lazily on first open (they're loaded dynamically via `import()` so they don't block page load). No server required — the index is just static files served by Cloudflare Pages.
+**How it works:** `npm run build` runs `astro build` followed by `pagefind --site dist`. Pagefind crawls the generated HTML and writes a binary search index into `dist/pagefind/`. At runtime, the Header lazy-loads `/pagefind/pagefind-ui.js` and `/pagefind/pagefind-ui.css` the first time the search overlay is opened (so they don't block page load). The JS file is injected via a `<script>` tag — see the IIFE gotcha note below for why a dynamic `import()` does NOT work. No server required — the index is just static files served by Cloudflare Pages.
 
 **Search does not work in `npm run dev`** — expected behavior. The `_pagefind/` directory only exists after a full build. If you open search during dev, the overlay will show a friendly "run `npm run build` to generate it" message instead of crashing.
 
@@ -244,18 +266,22 @@ The blog uses [Pagefind](https://pagefind.app/) for client-side full-text search
 - **AI-generated photo placeholders** (one round, then removed) — felt off, undermined authenticity.
 - **Image placeholder divs in markdown** (CSS class `.img-placeholder` in `global.css`) — kept in the codebase as an unused utility in case we want it again, but not used in any current post.
 - **GitHub web file uploads** — works but tedious for ongoing posts; GitHub Desktop or CLI push is the path.
+- **Loading Pagefind UI via dynamic `import('/pagefind/pagefind-ui.js')`** — does NOT work. `pagefind-ui.js` is an IIFE that ends with `window.PagefindUI = ...;})()` and has no `export` statements. A dynamic import resolves with an empty namespace, `mod.PagefindUI` is undefined, and `new undefined(...)` throws — falling through to the "Search index not available" fallback even when the index is healthy. The fix (in `src/components/Header.astro`) is to inject a regular `<script src="/pagefind/pagefind-ui.js">` and read `window.PagefindUI` on `script.onload`. Don't refactor this back to `import()`.
+- **`cp -r "<workspace>" /tmp/...`** to start a fresh build — fails with "Resource deadlock avoided" partway through `.git/objects/`. Use `git clone` from origin instead (see bootstrap step 3).
 
 ## Picking candidates from the queue
 
-Order doesn't matter — the goal is to get all 110+ videos done, not to do them in any particular sequence. Just pick from the unpublished list and work through them.
+**Read this before writing any new post from `queue-status.py` output.** As of 2026-04-29 the back-catalog conversion is functionally done. `queue-status.py` will report a small `Remaining:` count, but on inspection every remaining row is a filter false positive — TV commercials, sports-card shipping, crawfish boil, floral pick machines, game tutorials. **Do not write posts for these.** If the output looks like that, the answer to "what's next?" is "wait for Lonnie to upload a new video."
 
-A few things that affect which videos make good standalone posts:
+When a new video is uploaded that should become a post, the trigger is Lonnie. Either he names it directly, or he runs `python3 scripts/refresh-manifest.py` to add it to the candidate file and then names it. Don't pick from the queue without confirmation.
+
+If you do have a real candidate to write up, a few things to keep in mind:
 
 **Multi-part series** (e.g., "How to build an Arduino Lite Brite Clock — Part 3 of 6") make awkward standalone posts because readers land mid-project without context. Options: write all parts in a single session so you can batch them, or consolidate the series into one overview post that links to the individual videos. Don't write just one episode in a series and leave the rest for later — it reads oddly.
 
 **Obvious non-technical outliers** — a handful of videos slipped past the candidate filter that aren't really tutorials (e.g., a floral pick machine demo, a camera-leveling tip). If a video clearly doesn't fit the Arduino/electronics/DIY scope of the blog, skip it and note it for Lonnie to remove from `data/technical-candidates.tsv` manually.
 
-**Everything else** — just pick and go. Longer videos generally yield richer transcripts and more content to work with, but a tight 5-minute demo can make a clean short post too.
+**Everything else** — pick and go. Longer videos generally yield richer transcripts and more content to work with, but a tight 5-minute demo can make a clean short post too.
 
 ## What's reusable / what's the manifest
 
